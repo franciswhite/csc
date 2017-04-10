@@ -33,7 +33,19 @@ X=\{A,B,C,D\}\\
 \succ_5=(D \succ B \succ C \succ A)$\\
 $A$ wins the plurality vote because it is most preferred by two agents. Since it is the last choice for three other agents, $A$ will lose all pairwise contests.
 \subsection*{b}
-
+\textbf{Claim:} If a candidate is a Borda Winner (for any number of voter $n>0$ and any number of candidates $m>1$), then that candidate cannot be the Condorcet Loser (CL).\\
+Now, fix an arbitrary number of candidates $m$ that is larger than $1$ (for one candidate there is no meaningful talk of CL.\\
+I prove the claim by induction on the number of voters $n$, each of them has an individual preference ordering over the candidates.\\
+\textbf{Base case:} $n=1$\\
+If there is only one voter, then her most preferred candidate will be the Borda Winner and the least preferred the CL. They are distinct, so the claim holds.\\
+\textbf{Induction Hypothesis:} $n$\\
+Let $BW$ be the set of Borda Winners - the elements of $X$ that have at least as many points as any other elements under the preference ordering of the $n$ players.\\
+$x\in BW \implies$ $x$ is not CL\\
+\textbf{Induction Step:} $n+1$\\
+For $n$ voters $x\in BW$ and $x$ is not CL.\\
+Now we add one further voter, $voter_{n+1}$. There are two cases:\\
+1. If some $y\neq x \in BW$ is preferred to $x$ in $voter_{n+1}$'s preference ordering $\succ_{n+1}$, then $x$ will seize to be in BW because $y$ just obtained more points and they were previously tied. The claim still holds.\\
+2. If all $y\neq x \in BW$ in $\succ_{n+1}$ are dispreferred to $x$, then $x$ remains a Borda Winner but cannot become CL.
 \section*{Question 2}
 \subsection*{a}
 Moulin, Herve. 1988. Condorcet’s Principle Implies the No-Show Paradox. Journal of Economic Theory,
@@ -41,8 +53,8 @@ Moulin, Herve. 1988. Condorcet’s Principle Implies the No-Show Paradox. Journa
 \subsection*{b}
 I opened the Handbook, control-F'd \textit{'Moulin'}, went to the References Section where three papers fit the time frame: one of them bore the right title. I then googled the title to check the paper.
 \subsection*{c}
-Precise statement of Statement using notation from class:\\
-voting rule: f
+Let $X=\{1,...,m\}$ be the set of candidates, $N=\{1,...,n\}$ the set of voters, $\mathcal{L}(X)$ the set of strict orderings over $X$ and  $\mathcal{L}(X)^n$ the set of possible voter profiles \footnote{Wikipedia claims that $n\geq 25$ and $m\geq 4$} is needed to.\\
+If a voting rule $F$ always picks an $x\in X$ that is preferred by a majority of voters against each $y\in X-\{x\}$, then there are profiles in $\mathcal{L}(X)^n$ where some $i \in N$ has an incentive to abstain from voting.
 \subsection*{d}
 \textbf{Political Science}\\
 Felsenthal, Dan S. 2012. 'Review of Paradoxes Afflicting Procedures for Electing a Single Candidate' in: Electoral Systems: Paradoxes, Assumptions, and Procedures, 19-91. Springer Berlin Heidelberg. \href{http://link.springer.com/chapter/10.1007/978-3-642-20441-8_3}{Political Science Link}\\
@@ -63,10 +75,14 @@ Mr MacAskill is Associate Professor of Philosophy at Oxford (\href{http://www.wi
 
 \section*{Question 3}
 \subsection*{a}
-It is impossible to prove the claim that some rule is always strictly the best one to minimize the average regret.\\
-To see this, consider the following 
-\subsection*{b}
-No matter which $x\in X$ wins, agent $i$'s preference order is uniformly (and independently from all other agents) drawn from $m!$ possible such orderings. There are equally many orderings where $x$ occupies the first place, the second place, the third etc. Each place of $x$ in $i$'s order is thus equally probable for this player. Hence, each regret-value - from $m-1$ to $0$ is equally probable; that is, has probabality $\tfrac{1}{m}$. \\
-Under this assumption of uniform distribution of individual regret, and as $n$ grows very large, the mean of the $n$ individual regret-values will converge to the expected average regret: $\tfrac{1}{n}\sum_{i=1} ^ n regret(i)=EU(regret$.
+It is impossible to prove the claim that some rule is always strictly the best one to minimize the \textit{average regret}. The \textit{average regret} depends on the specific preference profile one is looking at and there are such profiles where all rules perform identically.\\
 
+\noindent Consider the following situation where $N=\{1,2\}$ and $X=\{A,B\}$ and the preference profile $\boldsymbol{\succ}=(\succ_1,\succ_2)$ is as follows:\\
+$\succ_1=(A\succ B)$\\
+$\succ_2=(B\succ A)$\\
+Any resolute voting rule will either declare $A$ or $B$ the winner. In either case the average regret is equal to $0.5$, for one player will have an individual regret of $0$ while the other has an individual regret of $1$.\\
+Thus there is no meaningful sense in which any voting rule generally is the 'best choice' in terms of average regret minimisation; given this specific preference profile they all perform equally well.
+\subsection*{b}
+No matter which $x\in X$ wins, agent $i$'s preference order is uniformly (and independently from all other agents, I assume) drawn from $m!$ possible such orderings. There are therefore equally many orderings where $x$ occupies the first place, the second place, the third etc. in $\succ_i$. Each place of $x$ in $i$'s order is thus equally probable. Hence, each regret-value - from $m-1$ to $0$ is equally probable; that is, has probabality $\tfrac{1}{m}$. \\
+Under this assumption of uniform distribution of individual regret, and as $n$ grows very large, the mean or average of the $n$ individual regret-values will converge to the \textit{average expected regret} by the weak law of large numbers. It will simply be $\tfrac{m-1}{2}$.
 \end{document}
