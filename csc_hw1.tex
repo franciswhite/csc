@@ -30,25 +30,41 @@ X=\{A,B,C,D\}\\
 \succ_1=\succ_2=(A \succ B \succ C \succ D)\\
 \succ_3=(B \succ C \succ D \succ A)\\
 \succ_4=(C \succ D \succ B \succ A)\\
-\succ_5=(D \succ B \succ C \succ A)$
+\succ_5=(D \succ B \succ C \succ A)$\\
 $A$ wins the plurality vote because it is most preferred by two agents. Since it is the last choice for three other agents, $A$ will lose all pairwise contests.
 \subsection*{b}
 
 \section*{Question 2}
 \subsection*{a}
-Moulin, H. 1988b. Condorcet’s Principle Implies the No-Show Paradox. Journal of Economic Theory,
+Moulin, Herve. 1988. Condorcet’s Principle Implies the No-Show Paradox. Journal of Economic Theory,
 45, 53–64.
 \subsection*{b}
-I opened the Handbook, control-F'd \textit{'Moulin'}, went to the References Section where three papers fit the time frame: one of them bore the right title. I then google'd the title to check the abstract and be certain.
+I opened the Handbook, control-F'd \textit{'Moulin'}, went to the References Section where three papers fit the time frame: one of them bore the right title. I then googled the title to check the paper.
 \subsection*{c}
 Precise statement of Statement using notation from class:\\
 voting rule: f
 \subsection*{d}
-Political Scientist: \href{http://link.springer.com/chapter/10.1007/978-3-642-20441-8_3}{click}\\
-CS: \href{http://link.springer.com/chapter/10.1007%2F978-3-642-21581-0_25}{click}\\
-Philosophy: \href{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.677.4121&rep=rep1&type=pdf}{click}
+\textbf{Political Science}\\
+Felsenthal, Dan S. 2012. 'Review of Paradoxes Afflicting Procedures for Electing a Single Candidate' in: Electoral Systems: Paradoxes, Assumptions, and Procedures, 19-91. Springer Berlin Heidelberg. \href{http://link.springer.com/chapter/10.1007/978-3-642-20441-8_3}{Political Science Link}\\
+The author is associated with the University of Haifa's School of Political Science (\href{https://www.researchgate.net/profile/Dan_Felsenthal}{1}). He has copiously written on voting behavior and theory (\href{https://scholar.google.com/citations?user=0Y0CkhcAAAAJ}{2}).\\ In the paper Felsenthal gives an overview over social-choice properties of different voting procedures for the election of one out of two or more candidates. The No-Show-Paradox appears in  a section about different types of paradoxes.\\
+
+\noindent \textbf{Computer Science}\\
+Van Gelder, Allen. 2011. 'Careful Ranking of Multiple Solvers with Timeouts and Ties' in:
+Theory and Applications of Satisfiability Testing - SAT 2011: 14th International Conference, SAT 2011, Ann Arbor, MI, USA, June 19-22, 2011. Proceedings, 317-328. Springer Berlin Heidelberg.
+ \href{http://link.springer.com/chapter/10.1007%2F978-3-642-21581-0_25}{Computer Science Link} \\
+Mr Van Gelder is professor of Computer Science at the MIT (\href{https://users.soe.ucsc.edu/~avg/}{3}).\\
+The author proposes a \textit{careful ranking} system to compare different Satisfiability solvers. He briefly mentions the No-Show-Paradox to dismiss the appropriateness of the \textit{Schulze ranking} as a rival method.\\
+
+\noindent \textbf{Philosophy}\\
+MacAskill, William. 2016. Normative Uncertainty as a Voting Problem. Mind, 125 (500), 967-1004.
+ \href{https://academic.oup.com/mind/article/125/500/967/2277457/Normative-Uncertainty-as-a-Voting-Problem#45747421}{Philosophy Link}\\
+Mr MacAskill is Associate Professor of Philosophy at Oxford (\href{http://www.williammacaskill.com/}{4}).\\
+ In his article he refers to Moulin's paper to argue that all metanormative theories falling under Condorcet Extensions violate a desideratum which he calls \textit{Updating Consistency}.
 
 \section*{Question 3}
+\subsection*{a}
+It is impossible to prove the claim that some rule is always strictly the best one to minimize the average regret.\\
+To see this, consider the following 
 \subsection*{b}
 No matter which $x\in X$ wins, agent $i$'s preference order is uniformly (and independently from all other agents) drawn from $m!$ possible such orderings. There are equally many orderings where $x$ occupies the first place, the second place, the third etc. Each place of $x$ in $i$'s order is thus equally probable for this player. Hence, each regret-value - from $m-1$ to $0$ is equally probable; that is, has probabality $\tfrac{1}{m}$. \\
 Under this assumption of uniform distribution of individual regret, and as $n$ grows very large, the mean of the $n$ individual regret-values will converge to the expected average regret: $\tfrac{1}{n}\sum_{i=1} ^ n regret(i)=EU(regret$.
