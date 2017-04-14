@@ -1,0 +1,90 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  COMSOC: Homework 2 \\
+  \large Silvan Hungerbuehler, 11394013}
+
+\usepackage{mathptmx} % "times new roman"
+\usepackage{amssymb}
+\usepackage{amsmath, amsthm}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{comment}
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+\usepackage{bm}
+
+\usepackage[normalem]{ulem}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Question 1}
+\subsection*{a}
+The antiplurality rule is characterized by \textit{discrete distance} and the \textit{unanimous loser} consensus criterion.\\
+Some candidate $x$ is a \textit{unanimous loser} with respect to some profile iff all voters rank $x$ last in their individual ballot.
+$N=\{1,2,3,4,5\}\\
+X=\{A,B,C,D\}\\
+\boldsymbol{\succ}=(\succ_1,...,\succ_5)\\
+\succ_1=\succ_2=(A \succ B \succ C \succ D)\\
+\succ_3=(B \succ C \succ D \succ A)\\
+\succ_4=(C \succ D \succ B \succ A)\\
+\succ_5=(D \succ B \succ C \succ A)$\\
+$A$ wins the plurality vote because it is most preferred by two agents. Since it is the last choice for three other agents, $A$ will lose all pairwise contests.
+\subsection*{b}
+\textbf{Claim:} If a candidate is a Borda Winner (for any number of voter $n>0$ and any number of candidates $m>1$), then that candidate cannot be the Condorcet Loser (CL).\\
+Now, fix an arbitrary number of candidates $m$ that is larger than $1$ (for one candidate there is no meaningful talk of CL.\\
+I prove the claim by induction on the number of voters $n$, each of them has an individual preference ordering over the candidates.\\
+\textbf{Base case:} $n=1$\\
+If there is only one voter, then her most preferred candidate will be the Borda Winner and the least preferred the CL. They are distinct, so the claim holds.\\
+\textbf{Induction Hypothesis:} $n$\\
+Let $BW$ be the set of Borda Winners - the elements of $X$ that have at least as many points as any other elements under the preference ordering of the $n$ players.\\
+$x\in BW \implies$ $x$ is not CL\\
+\textbf{Induction Step:} $n+1$\\
+For $n$ voters $x\in BW$ and $x$ is not CL.\\
+Now we add one further voter, $voter_{n+1}$. There are two cases:\\
+1. If some $y\neq x \in BW$ is preferred to $x$ in $voter_{n+1}$'s preference ordering $\succ_{n+1}$, then $x$ will seize to be in BW because $y$ just obtained more points and they were previously tied. The claim still holds.\\
+2. If all $y\neq x \in BW$ in $\succ_{n+1}$ are dispreferred to $x$, then $x$ remains a Borda Winner but cannot become CL.
+\section*{Question 2}
+\subsection*{a}
+Moulin, Herve. 1988. Condorcet’s Principle Implies the No-Show Paradox. Journal of Economic Theory,
+45, 53–64.
+\subsection*{b}
+I opened the Handbook, control-F'd \textit{'Moulin'}, went to the References Section where three papers fit the time frame: one of them bore the right title. I then googled the title to get the paper.
+\subsection*{c}
+Let $X=\{1,...,m\}$ be a set of candidates and $N=\{1,...,n\}$ a set of voters.
+For $|N|\geq 25$ and $|X|\geq 4$ a voting rule $F$ cannot satisfy the Condorcet Principle and the Participation Principle at the same time.
+\subsection*{d}
+\textbf{Political Science}\\
+Felsenthal, Dan S. 2012. 'Review of Paradoxes Afflicting Procedures for Electing a Single Candidate' in: Electoral Systems: Paradoxes, Assumptions, and Procedures, 19-91. Springer Berlin Heidelberg. \href{http://link.springer.com/chapter/10.1007/978-3-642-20441-8_3}{Political Science Link}\\
+The author is associated with the University of Haifa's School of Political Science (\href{https://www.researchgate.net/profile/Dan_Felsenthal}{1}). He has copiously written on voting behavior and theory (\href{https://scholar.google.com/citations?user=0Y0CkhcAAAAJ}{2}).\\ In the paper Felsenthal gives an overview over social-choice properties of different voting procedures for the election of one out of two or more candidates. The No-Show-Paradox appears in  a section about different types of paradoxes.\\
+
+\noindent \textbf{Computer Science}\\
+Van Gelder, Allen. 2011. 'Careful Ranking of Multiple Solvers with Timeouts and Ties' in:
+Theory and Applications of Satisfiability Testing - SAT 2011: 14th International Conference, SAT 2011, Ann Arbor, MI, USA, June 19-22, 2011. Proceedings, 317-328. Springer Berlin Heidelberg.
+ \href{http://link.springer.com/chapter/10.1007%2F978-3-642-21581-0_25}{Computer Science Link} \\
+Mr Van Gelder is professor of Computer Science at the MIT (\href{https://users.soe.ucsc.edu/~avg/}{3}).\\
+The author proposes a \textit{careful ranking} system to compare different Satisfiability solvers. He briefly mentions the No-Show-Paradox to dismiss the appropriateness of the \textit{Schulze ranking} as a rival method.\\
+
+\noindent \textbf{Philosophy}\\
+MacAskill, William. 2016. Normative Uncertainty as a Voting Problem. Mind, 125 (500), 967-1004.
+ \href{https://academic.oup.com/mind/article/125/500/967/2277457/Normative-Uncertainty-as-a-Voting-Problem#45747421}{Philosophy Link}\\
+Mr MacAskill is Associate Professor of Philosophy at Oxford (\href{http://www.williammacaskill.com/}{4}).\\
+ In his article he refers to Moulin's paper to argue that all metanormative theories falling under Condorcet Extensions violate a desideratum which he calls \textit{Updating Consistency}.
+
+\section*{Question 3}
+\subsection*{a}
+It is impossible to prove the claim that some rule is always strictly the best one to minimize the \textit{average regret}. The \textit{average regret} depends on the specific preference profile one is looking at and there are such profiles where all rules perform identically.\\
+
+\noindent Consider the following situation where $N=\{1,2\}$ and $X=\{A,B\}$ and the preference profile $\boldsymbol{\succ}=(\succ_1,\succ_2)$ is as follows:\\
+$\succ_1=(A\succ B)$\\
+$\succ_2=(B\succ A)$\\
+Any resolute voting rule will either declare $A$ or $B$ the winner. In either case the average regret is equal to $0.5$, for one player will have an individual regret of $0$ while the other has an individual regret of $1$.\\
+Thus there is no meaningful sense in which any voting rule generally is the 'best choice' in terms of average regret minimisation; given this specific preference profile they all perform equally well.
+\subsection*{b}
+No matter which $x\in X$ wins, agent $i$'s preference order is uniformly (and independently from all other agents, I assume) drawn from $m!$ possible such orderings. There are therefore equally many orderings where $x$ occupies the first place, the second place, the third etc. in $\succ_i$. Each place of $x$ in $i$'s order is thus equally probable. Hence, each regret-value - from $m-1$ to $0$ is equally probable; that is, has probabality $\tfrac{1}{m}$. \\
+Under this assumption of uniform distribution of individual regret, and as $n$ grows very large, the mean or average of the $n$ individual regret-values will converge to the \textit{average expected regret} by the weak law of large numbers. It will simply be $\tfrac{m-1}{2}$.
+\end{document}
