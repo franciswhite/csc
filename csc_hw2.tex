@@ -24,56 +24,18 @@
 
 \section*{Question 1}
 \subsection*{a}
-The antiplurality rule is characterized by \textit{discrete distance} and the \textit{unanimous loser} consensus criterion.\\
-Some candidate $x$ is a \textit{unanimous loser} with respect to some profile iff all voters rank $x$ last in their individual ballot.
-$N=\{1,2,3,4,5\}\\
-X=\{A,B,C,D\}\\
-\boldsymbol{\succ}=(\succ_1,...,\succ_5)\\
-\succ_1=\succ_2=(A \succ B \succ C \succ D)\\
-\succ_3=(B \succ C \succ D \succ A)\\
-\succ_4=(C \succ D \succ B \succ A)\\
-\succ_5=(D \succ B \succ C \succ A)$\\
-$A$ wins the plurality vote because it is most preferred by two agents. Since it is the last choice for three other agents, $A$ will lose all pairwise contests.
+The antiplurality rule is characterized by the \textit{discrete distance} and the \textit{unanimous loser} consensus criterion.\\
+A candidate $x$ is a \textit{unanimous loser} with respect to some profile iff all voters rank $x$ last in their individual ballot.
 \subsection*{b}
-\textbf{Claim:} If a candidate is a Borda Winner (for any number of voter $n>0$ and any number of candidates $m>1$), then that candidate cannot be the Condorcet Loser (CL).\\
-Now, fix an arbitrary number of candidates $m$ that is larger than $1$ (for one candidate there is no meaningful talk of CL.\\
-I prove the claim by induction on the number of voters $n$, each of them has an individual preference ordering over the candidates.\\
-\textbf{Base case:} $n=1$\\
-If there is only one voter, then her most preferred candidate will be the Borda Winner and the least preferred the CL. They are distinct, so the claim holds.\\
-\textbf{Induction Hypothesis:} $n$\\
-Let $BW$ be the set of Borda Winners - the elements of $X$ that have at least as many points as any other elements under the preference ordering of the $n$ players.\\
-$x\in BW \implies$ $x$ is not CL\\
-\textbf{Induction Step:} $n+1$\\
-For $n$ voters $x\in BW$ and $x$ is not CL.\\
-Now we add one further voter, $voter_{n+1}$. There are two cases:\\
-1. If some $y\neq x \in BW$ is preferred to $x$ in $voter_{n+1}$'s preference ordering $\succ_{n+1}$, then $x$ will seize to be in BW because $y$ just obtained more points and they were previously tied. The claim still holds.\\
-2. If all $y\neq x \in BW$ in $\succ_{n+1}$ are dispreferred to $x$, then $x$ remains a Borda Winner but cannot become CL.
+\textit{Cindarella-Swap Distance}:\\\
+This measure of distance between two profiles - $\boldsymbol{R}$ and $\boldsymbol{R'}$ -  only takes into account swaps from one end of an individual ranking to another. The distance is the minimal number of such extremely-opposed swaps needed to turn $\boldsymbol{R}$ into $\boldsymbol{R'}$ or vice versa.
+The antiplurality rule is characterized by the \textit{unanimous winner} consensus criterion and the maximal \textit{Cindarella-Swap Distance}.
+\subsection*{c}
+Noise Model: Each voter independently ranks the true winner of the antiplurality rule at the $m^{th}$ position with probability $1-\epsilon$. All other candidates occupy other positions with probability $\tfrac{\epsilon}{m-1}$ each.\\
+Then a candidate $x$ has maximum likelihood of being the true winner iff $x$ is the antiplurality winner.
 \section*{Question 2}
 \subsection*{a}
-Moulin, Herve. 1988. Condorcet’s Principle Implies the No-Show Paradox. Journal of Economic Theory,
-45, 53–64.
-\subsection*{b}
-I opened the Handbook, control-F'd \textit{'Moulin'}, went to the References Section where three papers fit the time frame: one of them bore the right title. I then googled the title to get the paper.
-\subsection*{c}
-Let $X=\{1,...,m\}$ be a set of candidates and $N=\{1,...,n\}$ a set of voters.
-For $|N|\geq 25$ and $|X|\geq 4$ a voting rule $F$ cannot satisfy the Condorcet Principle and the Participation Principle at the same time.
-\subsection*{d}
-\textbf{Political Science}\\
-Felsenthal, Dan S. 2012. 'Review of Paradoxes Afflicting Procedures for Electing a Single Candidate' in: Electoral Systems: Paradoxes, Assumptions, and Procedures, 19-91. Springer Berlin Heidelberg. \href{http://link.springer.com/chapter/10.1007/978-3-642-20441-8_3}{Political Science Link}\\
-The author is associated with the University of Haifa's School of Political Science (\href{https://www.researchgate.net/profile/Dan_Felsenthal}{1}). He has copiously written on voting behavior and theory (\href{https://scholar.google.com/citations?user=0Y0CkhcAAAAJ}{2}).\\ In the paper Felsenthal gives an overview over social-choice properties of different voting procedures for the election of one out of two or more candidates. The No-Show-Paradox appears in  a section about different types of paradoxes.\\
 
-\noindent \textbf{Computer Science}\\
-Van Gelder, Allen. 2011. 'Careful Ranking of Multiple Solvers with Timeouts and Ties' in:
-Theory and Applications of Satisfiability Testing - SAT 2011: 14th International Conference, SAT 2011, Ann Arbor, MI, USA, June 19-22, 2011. Proceedings, 317-328. Springer Berlin Heidelberg.
- \href{http://link.springer.com/chapter/10.1007%2F978-3-642-21581-0_25}{Computer Science Link} \\
-Mr Van Gelder is professor of Computer Science at the MIT (\href{https://users.soe.ucsc.edu/~avg/}{3}).\\
-The author proposes a \textit{careful ranking} system to compare different Satisfiability solvers. He briefly mentions the No-Show-Paradox to dismiss the appropriateness of the \textit{Schulze ranking} as a rival method.\\
-
-\noindent \textbf{Philosophy}\\
-MacAskill, William. 2016. Normative Uncertainty as a Voting Problem. Mind, 125 (500), 967-1004.
- \href{https://academic.oup.com/mind/article/125/500/967/2277457/Normative-Uncertainty-as-a-Voting-Problem#45747421}{Philosophy Link}\\
-Mr MacAskill is Associate Professor of Philosophy at Oxford (\href{http://www.williammacaskill.com/}{4}).\\
- In his article he refers to Moulin's paper to argue that all metanormative theories falling under Condorcet Extensions violate a desideratum which he calls \textit{Updating Consistency}.
 
 \section*{Question 3}
 \subsection*{a}
