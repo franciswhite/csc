@@ -73,4 +73,13 @@ Thus there is no meaningful sense in which any voting rule generally is the 'bes
 \subsection*{b}
 No matter which $x\in X$ wins, agent $i$'s preference order is uniformly (and independently from all other agents, I assume) drawn from $m!$ possible such orderings. There are therefore equally many orderings where $x$ occupies the first place, the second place, the third etc. in $\succ_i$. Each place of $x$ in $i$'s order is thus equally probable. Hence, each regret-value - from $m-1$ to $0$ is equally probable; that is, has probabality $\tfrac{1}{m}$. \\
 Under this assumption of uniform distribution of individual regret, and as $n$ grows very large, the mean or average of the $n$ individual regret-values will converge to the \textit{average expected regret} by the weak law of large numbers. It will simply be $\tfrac{m-1}{2}$.
+
+\section*{4}
+\subsection*{a}
+\textbf{Claim 1:} A SCF is \textit{paretian} and \textit{resolute} $\implies$ SCF is \textit{surjective}.\\
+\textbf{Proof:} Take any $x\in X$ and construct $\mathbf{R}^*$ where $x$ is first in each individual ballot. For all other candidates in $X$, $y\in X-\{x\}$, $\mathbf{N}^{\mathbf{F}}_{x\succ y}=N$. By virtue of being \textit{paretian} the SCF thus cannot elect any of the $y\in X-\{x\}$. Because the SCF must return something by definition $x$ will be elected. We chose the $x$ arbitrarily, thus the SCF is \textit{surjective}.\\
+
+\noindent \textbf{Claim 2:} There exists a SCF that is \textit{surjective} and \textit{resolute} but no \textit{paretian}.
+\textbf{Example:} The \textit{antiplurality} rule (lexicographic tie-breaking) would be \textit{surjective} and \textit{resolute} but fail to be \textit{paretian}.
+
 \end{document}
