@@ -33,8 +33,18 @@ The antiplurality rule is characterized by the \textit{unanimous winner} consens
 \subsection*{c}
 Noise Model: Each voter independently ranks the true winner of the antiplurality rule at the $m^{th}$ position with probability $1-\epsilon$. All other candidates occupy other positions with probability $\tfrac{\epsilon}{m-1}$ each.\\
 Then a candidate $x$ has maximum likelihood of being the true winner iff $x$ is the antiplurality winner.
-\section*{Question 2}
-\subsection*{a}
+\section*{2}
+It is possible to find an SCF that satisfies the three desiderate for any $n=x*6$, where $x\in \mathbb{N}$. For all $n$ that are multiples of $6$ no such SCF can be found.\\
+One voting rule that has all the desired properties:\\
+The candidate(s) who win(s) the most pair-wise contests across the profile is/are elected.\\
+For $n\neq x\in \mathbb{N}*6$, this rule respects all desiderata: Anonymity, for all voters are considered equally important; neutrality, for the candidates are treated equally; lastly, it can never end in a three-way-tie. To see this, consider what would be necessary to obtain a three-way-tie for any profile $\mathbf{R}$: all possible orderings (permutations) of the three candidates must occur equally many times in $\mathbf{R}$. But there are $3!=6$ many possible such permutations, so for each of them to occur the same number of times there would need to be $n=x\in \mathbb{N}*6$ voters. But we excluded precisely these values for $n$.\\
+
+\noindent It is impossible to find any SCF $\mathbf{F}$
+
+
+
+
+\section*{Question 3}
 How many voting rules?\\
 For $x$ candidates and $m$ voters: There are $x!$ many ways to order the candidates in an individual ballot, so there are $x!^m$ possible profiles ($m$ 'spots' and $x!$ options in each 'spot'). This is the cardinality of the domain of our social choice function (SCF). The cardinality of the codomain is simply $2^x-1$ - the cardinality of the power set minus the empty set. Thus there are $[2^x-1]^{x!^m}$ SCF in general. For $m=n=3$ this makes $[2^3-1]^{3!^3}=7^{216}$ many SCF. \\
 How many of them anonymous?\\
