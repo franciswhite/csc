@@ -34,14 +34,15 @@ The antiplurality rule is characterized by the \textit{unanimous winner} consens
 Noise Model: Each voter independently ranks the true winner of the antiplurality rule at the $m^{th}$ position with probability $1-\epsilon$. All other candidates occupy other positions with probability $\tfrac{\epsilon}{m-1}$ each.\\
 Then a candidate $x$ has maximum likelihood of being the true winner iff $x$ is the antiplurality winner.
 \section*{2}
-It is possible to find an SCF that satisfies the three desiderate for any $n=x*6$, where $x\in \mathbb{N}$. For all $n$ that are multiples of $6$ no such SCF can be found.\\
-One voting rule that has all the desired properties:\\
-The candidate(s) who win(s) the most pair-wise contests across the profile is/are elected.\\
-For $n\neq x\in \mathbb{N}*6$, this rule respects all desiderata: Anonymity, for all voters are considered equally important; neutrality, for the candidates are treated equally; lastly, it can never end in a three-way-tie. To see this, consider what would be necessary to obtain a three-way-tie for any profile $\mathbf{R}$: all possible orderings (permutations) of the three candidates must occur equally many times in $\mathbf{R}$. But there are $3!=6$ many possible such permutations, so for each of them to occur the same number of times there would need to be $n=x\in \mathbb{N}*6$ voters. But we excluded precisely these values for $n$.\\
+It is possible to find an SCF that satisfies the three desiderate for any $n=x*6$, where $x\in \mathbb{N}$. For all $n$ that are multiples of six no such SCF can be found.\\ %This should be n=x*3
 
-\noindent It is impossible to find any SCF $\mathbf{F}$
+\noindent One voting rule that has all the desired properties:\\
+\textbf{The candidate(s) who win(s) the most pair-wise contests across the profile is/are elected.}\\ %This is essentially Borda!
+For $n\neq x\in \mathbb{N}*6$, this rule respects all desiderata: \textit{Anonymity}, for all voters are considered equally important; \textit{neutrality}, for the candidates are treated equally; lastly, it can never end in a \textit{three-way tie}. To see this, consider what would be necessary to obtain a \textit{three-way tie} for any profile $\mathbf{R}$: all possible orderings (permutations) of the three candidates in the candidates set $X$ must occur equally many times in $\mathbf{R}$. %Is this so? ->NO! (A>B>C,C>B>A). But there are $3!=6$ many possible such permutations, so for each of them to occur the same number of times there would need to be $n=x\in \mathbb{N}*6$ voters. But we excluded precisely these values for $n$.\\
 
-
+\noindent It is impossible to find any SCF $\mathbf{F}$ that satisfies the three desiderata for $n=x*6$ voters, where $x\in \mathbb{N}$.\\
+For any $\mathbf{F}$ that satisfies \textit{anonymity} and \textit{neutrality} we can construct a profile $\mathbf{R}^*$ with $n=x\in \mathbb{N}*6$ voters that ends in a \textit{three-way tie}. $\mathbf{R}^*$ consists of $x\in \mathbb{N}$ copies of all $3!=6$
+ways to order $X$. That is, all possible ordering so $X$ are present in equal number. Since $\mathbf{F}$ is \textit{anonymous} the order of the ballots in $\mathbf{R}^*$ cannot matter; since it is \textit{neutral} the specific candidate under inspection is irrelevant for the output of $\mathbf{F}$. Therefore, such an $\mathbf{R}^*$ should output a set of three winners. We have a \textit{three-way tie}.
 
 
 \section*{Question 3}
