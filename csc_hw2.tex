@@ -16,6 +16,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{float}
 \usepackage{bm}
+\usepackage{graphicx}
+%\graphicspath{ {images/} }
 
 \usepackage[normalem]{ulem}
 \date{}
@@ -24,8 +26,8 @@
 
 \section*{Question 1}
 \subsection*{a}
-The antiplurality rule is characterized by the \textit{discrete distance} and the \textit{unanimous loser} consensus criterion.\\
-A candidate $x$ is a \textit{unanimous loser} with respect to some profile iff all voters rank $x$ last in their individual ballot.
+The antiplurality rule is characterized by the maximal \textit{discrete distance} and the \textit{unanimous loser} consensus criterion.\\
+A candidate $x$ is an \textit{unanimous loser} with respect to some profile iff all voters rank $x$ last in their individual ballot.
 \subsection*{b}
 \textit{Cindarella-Swap Distance}:\\\
 This measure of distance between two profiles - $\boldsymbol{R}$ and $\boldsymbol{R'}$ -  only takes into account swaps from one end of an individual ranking to another. The distance is the minimal number of such extremely-opposed swaps needed to turn $\boldsymbol{R}$ into $\boldsymbol{R'}$ or vice versa.
@@ -34,52 +36,84 @@ The antiplurality rule is characterized by the \textit{unanimous winner} consens
 Noise Model: Each voter independently ranks the true winner of the antiplurality rule at the $m^{th}$ position with probability $1-\epsilon$. All other candidates occupy other positions with probability $\tfrac{\epsilon}{m-1}$ each.\\
 Then a candidate $x$ has maximum likelihood of being the true winner iff $x$ is the antiplurality winner.
 \section*{2}
-It is possible to find an SCF that satisfies the three desiderate for any $n=x*6$, where $x\in \mathbb{N}$. For all $n$ that are multiples of six no such SCF can be found.\\ %This should be n=x*3
+It is possible to find an SCF that satisfies the three desiderata for any $n=z*3$, where $z\in \mathbb{N}$. For all $n$ that are multiples of three no such SCF can be found.\\
 
-\noindent One voting rule that has all the desired properties:\\
-\textbf{The candidate(s) who win(s) the most pair-wise contests across the profile is/are elected.}\\ %This is essentially Borda!
-For $n\neq x\in \mathbb{N}*6$, this rule respects all desiderata: \textit{Anonymity}, for all voters are considered equally important; \textit{neutrality}, for the candidates are treated equally; lastly, it can never end in a \textit{three-way tie}. To see this, consider what would be necessary to obtain a \textit{three-way tie} for any profile $\mathbf{R}$: all possible orderings (permutations) of the three candidates in the candidates set $X$ must occur equally many times in $\mathbf{R}$. %Is this so? ->NO! (A>B>C,C>B>A). But there are $3!=6$ many possible such permutations, so for each of them to occur the same number of times there would need to be $n=x\in \mathbb{N}*6$ voters. But we excluded precisely these values for $n$.\\
+\noindent One voting rule that has all the desired properties: \textit{Plurality} Rule.\\
 
-\noindent It is impossible to find any SCF $\mathbf{F}$ that satisfies the three desiderata for $n=x*6$ voters, where $x\in \mathbb{N}$.\\
-For any $\mathbf{F}$ that satisfies \textit{anonymity} and \textit{neutrality} we can construct a profile $\mathbf{R}^*$ with $n=x\in \mathbb{N}*6$ voters that ends in a \textit{three-way tie}. $\mathbf{R}^*$ consists of $x\in \mathbb{N}$ copies of all $3!=6$
-ways to order $X$. That is, all possible ordering so $X$ are present in equal number. Since $\mathbf{F}$ is \textit{anonymous} the order of the ballots in $\mathbf{R}^*$ cannot matter; since it is \textit{neutral} the specific candidate under inspection is irrelevant for the output of $\mathbf{F}$. Therefore, such an $\mathbf{R}^*$ should output a set of three winners. We have a \textit{three-way tie}.
+For $n\neq z*3$, $z\in \mathbb{N}$, this rule respects all desiderata: \textit{Anonymity}, for all voters have equal weight; \textit{neutrality}, for the candidates are treated equally; lastly, it can never end in a \textit{three-way tie}. To see this, consider what would be necessary to obtain a \textit{three-way tie} for any profile $\mathbf{R}$: all three elements of the candidate set $X$ would need to be in the top-position for the same number of ballots. So the total number of voters - and thus available top-positions - must be divisible by three for this to be possible. Yet this is precluded by the fact that we are only considering profiles where $n$ is not a multiple of three. 
+
+\noindent It is impossible to find any SCF $\mathbf{F}$ that satisfies the three desiderata for three candidates and $n=z*3$ voters, where $z\in \mathbb{N}$.\\
+
+To see this, observe that there is no SCF for $n=3$ that respects \textit{neutrality} and \textit{anonymity}. consider the following profile:
+
+\begin{align*}
+a \succ b \succ c \\
+c \succ a \succ b \\
+b \succ c \succ a \\
+\end{align*}
+Suppose (w.l.o.g) that our SCF declares $a$ the winner. \textit{neutrality} allows us to swap $a$ with $b$ and then $b$ with $c$:
+\begin{align*}
+c \succ a \succ b \\
+b \succ c \succ a \\
+a \succ b \succ c \\
+\end{align*}
+Now, $c$ should be the winner (as it occupies the same positions in the profile as $a$ did previously).\\
+Then, apply \textit{anonymity} to switch the order of the ballots in the profile. By assumption, this should not change the winner $c$. 
+\begin{align*}
+a \succ b \succ c \\
+c \succ a \succ b \\
+b \succ c \succ a \\
+\end{align*}
+So we find ourselves with the original profile where $a$ won. We have encountered a contradiction.\\ 
+This is again our original case, so $a$ should win. Contradiction. Since $a$ was chosen arbitrarily the argument applies to all resolute voting rules. The same argument applies if we assume w.l.o.g. that there is a tie between $a$ and $b$. Thus, the only possible outcome is a three-way tie between $a$, $b$ and $c$ (no alternative is not an option).
+
+Thus we can construct the same argument with $x \in N$ voters for each preference order in the condorcet paradox, $3 \cdot x$ voters in total. Thus, for voters of any multiple of $3$, there is no voting rule which satisfies anonymity and neutrality with $|X|=3$ which does not lead to a three-way tie.
+
+Claim: The \textit{plurality rule} satisfies anonymity and neutrality never returns a three-way tie for $n\pmod 3=1$ or $n\pmod 3=2$ voters for $|X|=3$.
+
+It is easy to see that the plurality rule satisfies anonymity and neutrality. Let us now show that it is impossible to have a three-way tie with the plurality rule with $n\pmod 3=1$ or $n\pmod 3=2$ voters.
+
+Consider the total number of points available for the plurality rule for $n$ voters. It is $n$. If there is a three-way tie for $|X|=3$ the plurality rule it implies that those points are divided equally between all alternatives. Since only whole numbers are considered this can only be the case if $n\pmod 3=0$. In all other cases a three-way tie is impossible.
 
 
 \section*{Question 3}
 How many voting rules?\\
-For $x$ candidates and $m$ voters: There are $x!$ many ways to order the candidates in an individual ballot, so there are $x!^m$ possible profiles ($m$ 'spots' and $x!$ options in each 'spot'). This is the cardinality of the domain of our social choice function (SCF). The cardinality of the codomain is simply $2^x-1$ - the cardinality of the power set minus the empty set. Thus there are $[2^x-1]^{x!^m}$ SCF in general. For $m=n=3$ this makes $[2^3-1]^{3!^3}=7^{216}$ many SCF. \\
+For $x$ candidates and $m$ voters: The candidates could 'show up' at the election in $x!$ different orders (there are $x!$ ways they could receive their 'names'). Then, each individual voter has $x!$ many ways to order the named candidates in her individual ballot. Each of the $m$ voters independently chooses her own individual ordering. So, there are $x!*x!^m$ possible 'unordered profiles'. However, because the real profiles are ordered, there are are $m!$ more options for the ordered profiles. Thus, there are $x!*x!^m*m!$ possible ordered profiles. This is the cardinality of the domain of our social choice function (SCF). The cardinality of the codomain is simply $2^x-1$ - the cardinality of the power set minus the empty set. \\
+There are $Z^Y$ many functions from a set with cardinality $Y$ to a set with cardinality $Z$. Thus there are $[2^x-1]^{x!x!^m*m!}$ SCF in general. For $m=n=3$ this makes $[2^3-1]^{3!*3!^3*3!}=7^{7776}$ many SCF. \\
 How many of them anonymous?\\
-There are now a mere $x!*m$ elements in the domain to be considered (because a different ordering of individual rankings does not imply a different profile anymore). Therefore, there are $[2^x-1]^{x!*m}$ SCF in general; particularly, $[2^3-1]^{3!*3}=7^{18}$ in our case.\\
-How many neutral?\\ 
+There are now a mere $x!*x!^m$ elements in the domain to be considered (because a different ordering of individual rankings does not imply a different profile anymore). Therefore, there are $[2^x-1]^{x!*x!^m}$ SCF in general; particularly, $[2^3-1]^{3!*3!^3}=7^{1296}$ in our case.\\
+How many neutral?\footnote{I know all about neutrality. See Appendix for proof.}\\
+The order in which the candidates register for election does not matter here. This leaves us with $x!^m*m!$ many possible profiles. Specifically, then, there are $[2^3-1]^{3!*3!^3}=7^{1296}$ SCF.\\
 How many anonymous and neutral?\\
+Combining the two previous considerations leaves us with $x!^m$ possible profiles in general; in the present case this makes $7^{3!^3}=7^218$ SCF.\\
 How many are resolute?\\
-The codomain's cardinality would be equal to the number of candidates: $x$. So there are $x^{(x!^m)}$ possible SCF in general, or $3^{(3!^3)}=3^{216}$ in our case.
+Since only exactly one candidate can be elected, the codomain's cardinality would be equal to the number of candidates: $x$. So there are $x^{(x!x!^m*m!)}$ possible SCF in general, or $3^{(3!*3!^3*3!)}=3^{7776}$ in our case.
 How many are resolute and anonymous?\\
-Combining the domain's cardinality under anonymity with the resolute codomain already determined yields generally $x^{(x!*m)}$ possible SCF - this makes $3^{(3!*3)}=3^{18}$ for $m=n=3$.\\
+Combining the domain's cardinality under anonymity with the resolute codomain already determined yields generally $x^{(x!*x!^m!)}$ possible SCF - this makes $3^{(3!*3!^3)}=3^{1296}$ for $m=n=3$.\\
 How many are resolute and neutral?\\
+Similar considerations yield $x^{(x!^m*m!)}$ possible SCF in general, or  $3^{(3!^3*3!)}=3^{1296}$ for $m=n=3$.\\
 How many are resolute, neutral and anonymous?\\
-
-
-
-\section*{Question 3}
-\subsection*{a}
-It is impossible to prove the claim that some rule is always strictly the best one to minimize the \textit{average regret}. The \textit{average regret} depends on the specific preference profile one is looking at and there are such profiles where all rules perform identically.\\
-
-\noindent Consider the following situation where $N=\{1,2\}$ and $X=\{A,B\}$ and the preference profile $\boldsymbol{\succ}=(\succ_1,\succ_2)$ is as follows:\\
-$\succ_1=(A\succ B)$\\
-$\succ_2=(B\succ A)$\\
-Any resolute voting rule will either declare $A$ or $B$ the winner. In either case the average regret is equal to $0.5$, form one player will have an individual regret of $0$ while the other has an individual regret of $1$.\\
-Thus there is no meaningful sense in which any voting rule generally is the 'best choice' in terms of average regret minimisation; given this specific preference profile they all perform equally well.
-\subsection*{b}
-No matter which $x\in X$ wins, agent $i$'s preference order is uniformly (and independently from all other agents, I assume) drawn from $m!$ possible such orderings. There are therefore equally many orderings where $x$ occupies the first place, the second place, the third etc. in $\succ_i$. Each place of $x$ in $i$'s order is thus equally probable. Hence, each regret-value - from $m-1$ to $0$ is equally probable; that is, has probabality $\tfrac{1}{m}$. \\
-Under this assumption of uniform distribution of individual regret, and as $n$ grows very large, the mean or average of the $n$ individual regret-values will converge to the \textit{average expected regret} by the weak law of large numbers. It will simply be $\tfrac{m-1}{2}$.
-
+Combining all three constraints gives $x^{x!^m}$ many SCF in general. In particular, there are $3^{218}$ for $n=m=3$.
 \section*{4}
 \subsection*{a}
 \textbf{Claim 1:} A SCF is \textit{paretian} and \textit{resolute} $\implies$ SCF is \textit{surjective}.\\
 \textbf{Proof:} Take any $x\in X$ and construct $\mathbf{R}^*$ where $x$ is first in each individual ballot. For all other candidates in $X$, $y\in X-\{x\}$, $\mathbf{N}^{\mathbf{F}}_{x\succ y}=N$. By virtue of being \textit{paretian} the SCF thus cannot elect any of the $y\in X-\{x\}$. Because the SCF must return something by definition $x$ will be elected. We chose the $x$ arbitrarily, thus the SCF is \textit{surjective}.\\
 
-\noindent \textbf{Claim 2:} There exists a SCF that is \textit{surjective} and \textit{resolute} but no \textit{paretian}.
-\textbf{Example:} The \textit{antiplurality} rule (lexicographic tie-breaking) would be \textit{surjective} and \textit{resolute} but fail to be \textit{paretian}.
+\noindent \textbf{Claim 2:} There exists a SCF that is \textit{surjective} and \textit{resolute} but no \textit{paretian}.\\
+
+\noindent \textbf{Example:} The \textit{antiplurality} rule (lexicographic tie-breaking) is \textit{surjective} and \textit{resolute} but fail to be \textit{paretian}.\\
+It is \textit{surjective} because for any $x\in X$ we can find a profile $\mathbf{R}$ where all voters rank $x$ last in their ballot. Hence, all $x\in X$ can be elected. Because we can find such an $\mathbf{R}$ this rule is not \textit{paretian}. If every voter ranks $x$ last then any of the other $y\in X-\{x\}$ would be preferred by all voters. Nonetheless, $x$ is elected which violated the \textit{paritian} condition. The rule is certainly resolute because of the tie-breaking rule.
+
+\subsection*{b}
+The \textit{Anti-dictatorship} is such a rule. It picks some voter, say the first in the profile, and elects whatever her least preferred option happens to be.\\
+surjective, independent, non-dictatorial, resolute
+This is \textit{surjective}, for any candidate could be placed last in the first ballot of some profile. Therefore any candidate can be elected.\\
+It is resolute because there always only one last position in the anti-dictator's ballot. The candidate in that position is the sole winner.\\
+It is non-dicatorial because no voter has the garantuee that her first option will be elected.\\
+It is independent. If some candidate $x$ wins in a profile $\mathbf{R}$, then this is because it occupies the last position in the anti-dicator's individual ballot. So, no other candidate $y$ can win if we change $\mathbf{R}$ to $\mathbf{R}'$ but keep the relative ranking of $x$ and $y$ as it is in every individual ballot. Because to change the winner to $y$, it would have to be dispreferred in the anti-dictator's ballot.
+
+%http://www.sciencedirect.com/science/article/pii/0022053172900518?via%3Dihub
+
+\section*{Appendix}
 
 \end{document}
