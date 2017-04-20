@@ -26,15 +26,15 @@
 
 \section*{Question 1}
 \subsection*{a}
-The antiplurality rule is characterized by the maximal \textit{discrete distance} and the \textit{unanimous loser} consensus criterion. 
+The antiplurality rule is characterized by the maximal(!) \textit{discrete distance} and the \textit{unanimous loser} consensus criterion. 
 A candidate $x$ is an \textit{unanimous loser} with respect to some profile iff all voters rank $x$ last in their individual ballot.
 \subsection*{b}
 \textit{Cindarella-Swap Distance}:\\\
-This measure of distance between two profiles - $\boldsymbol{R}$ and $\boldsymbol{R'}$ -  only takes into account swaps from one end of an individual ranking to the other. The \textit{Cindarella-Swap Distance} between $\boldsymbol{R}$ into $\boldsymbol{R'}$ is the minimal number of such extremely-opposed swaps needed to turn one into the other.
-The antiplurality rule is characterized by the \textit{unanimous winner} consensus criterion and the maximal \textit{Cindarella-Swap Distance}.
+This measure of distance between two profiles - $\boldsymbol{R}$ and $\boldsymbol{R'}$ -  only takes into account swaps from one end of an individual ranking to the other. All swaps needed of candidates that are not extremely opposed are not counted by the measure. The \textit{Cindarella-Swap Distance} between $\boldsymbol{R}$ into $\boldsymbol{R'}$ is the minimal number of such extremely-opposed swaps needed to turn one into the other.
+The antiplurality rule is characterized by the \textit{unanimous winner} consensus criterion and the maximal(!) \textit{Cindarella-Swap Distance}.
 \subsection*{c}
-Suppose a jury of $n$ voters need to select the better of $x$ alternatives and each voter independently ranks the true winner - $a$ - last in her individual ballot with strictly smaller probability than any other of the candidates: $p_{last}(a) < p_{last}(b)$, for all $b \in X-\{a\}$. Then the probability that the \textit{anti-plurality} rule returns the correct decision increases monotonically in $n$ and approaches $1$ as $n$ goes to infinity.\\
-For $a$ to win under the \textit{anti-plurality} rule it needs be placed last in the smallest fraction of all ballots: $\tfrac{\# \text{voters ranking a last}}{n}$. But by the law of large numbers $\tfrac{\#\text{voters putting a last}}{n}$ converges to the probability that $a$ is ranked last by any individual voter: $p_{last}(a)$. By the construction of the noise model, $p_{last}(a)$ is strictly smaller than $p_{last}(b)$, for all $b \in X-\{a\}$, so as $n$ increases the probability of electing the correct candidate approaches $1$.
+If $n$ voters need to rank all candidates $X$ and each voter independently ranks the true winner - $a$ - last in her individual ballot with strictly smaller probability than any other of the candidates: $p_{last}(a) < p_{last}(b)$, for all $b \in X-\{a\}$. Then the probability that the \textit{anti-plurality} rule returns the correct decision increases monotonically in $n$ and approaches $1$ as $n$ goes to infinity.\\
+For $a$ to win under the \textit{anti-plurality} rule it needs be placed last in the smallest fraction of all ballots: $\tfrac{\# \text{voters ranking a last}}{n}$. But by the law of large numbers $\tfrac{\#\text{voters putting $a$ last}}{n}$ converges to the probability that $a$ is ranked last by any individual voter: $p_{last}(a)$. By the construction of the noise model, $p_{last}(a)$ is strictly smaller than $p_{last}(b)$, for all $b \in X-\{a\}$, so as $n$ increases the probability of electing the correct candidate approaches $1$.
 
 \section*{Question 2}
 It is possible to find an SCF that satisfies the three desiderata for any $n=z*3$, where $z\in \mathbb{N}$. For all $n$ that are multiples of three no such SCF can be found.\\
@@ -43,8 +43,7 @@ It is possible to find an SCF that satisfies the three desiderata for any $n=z*3
 For $n\neq z*3$, $z\in \mathbb{N}$, this rule respects all desiderata: \textit{Anonymity}, for all voters have equal weight; \textit{neutrality}, for the candidates are treated equally; lastly, it can never end in a \textit{three-way tie}. To see this, consider what would be necessary to obtain a \textit{three-way tie} for any profile $\mathbf{R}$: all three elements of the candidate set $X$ would need to be in the top-position for the same number of ballots. So the total number of voters - and thus available top-positions - must be divisible by three for this to be possible. Yet this is precluded by the fact that we are only considering profiles where $n$ is not a multiple of three. 
 
 \noindent It is impossible to find any SCF $\mathbf{F}$ that satisfies the three desiderata for three candidates and $n=z*3$ voters, where $z\in \mathbb{N}$.\\
-
-To see this, observe that there is no SCF for $n=3$ that respects \textit{neutrality} and \textit{anonymity}. consider the following profile:
+Suppose some SCF satisfies \textit{anonymity} and \textit{neutrality}. For any profile with a number of voters that is a multiple of three we can construct a profile as the following:
 
 \begin{align*}
 a \succ b \succ c \\
@@ -64,17 +63,9 @@ a \succ b \succ c \\
 c \succ a \succ b \\
 b \succ c \succ a \\
 \end{align*}
-So we find ourselves with the original profile where $a$ won. We have encountered a contradiction.\\ 
-This is again our original case, so $a$ should win. Contradiction. Since $a$ was chosen arbitrarily the argument applies to all resolute voting rules. The same argument applies if we assume w.l.o.g. that there is a tie between $a$ and $b$. Thus, the only possible outcome is a three-way tie between $a$, $b$ and $c$ (no alternative is not an option).
-
-Thus we can construct the same argument with $x \in N$ voters for each preference order in the condorcet paradox, $3 \cdot x$ voters in total. Thus, for voters of any multiple of $3$, there is no voting rule which satisfies anonymity and neutrality with $|X|=3$ which does not lead to a three-way tie.
-
-Claim: The \textit{plurality rule} satisfies anonymity and neutrality never returns a three-way tie for $n\pmod 3=1$ or $n\pmod 3=2$ voters for $|X|=3$.
-
-It is easy to see that the plurality rule satisfies anonymity and neutrality. Let us now show that it is impossible to have a three-way tie with the plurality rule with $n\pmod 3=1$ or $n\pmod 3=2$ voters.
-
-Consider the total number of points available for the plurality rule for $n$ voters. It is $n$. If there is a three-way tie for $|X|=3$ the plurality rule it implies that those points are divided equally between all alternatives. Since only whole numbers are considered this can only be the case if $n\pmod 3=0$. In all other cases a three-way tie is impossible.
-
+But this is the original profile where $a$ had won. We have encountered a contradiction.\\
+ 
+We have chosen $a$ arbitrarily as the initial winner, but the same argument holds for $b$ and $c$. Also, we reach the same contradiction if we assume that the initial profile yields a tie between any of the two candidates. SCF are defined so as to have at least one winner. So, the only non-contradictory situation is a three-way tie between all three candidates. Notice also that we can find a similar profile for which we reach the same contradictions for any $n$ that is a multiple of three; we would simply add a 'copy' of each voter to reach the desired number of voters.
 
 \section*{Question 3}
 How many voting rules?\\
