@@ -23,5 +23,6 @@ import numpy as np
         #Plurality:
             # look at candidate count: if margin of victory > 1, declare profile not manipulable
             # if margin of victory < 2, note who lost and look at all voter's profile in following way:
-            # if position of loser i in some profile > actual winner candidate's rank in voter's profile, declare profile manipulable
-		#otherwise, declare it unmanipulable
+            # if rank of loser > actual winner's rank, declare profile manipulable
+		#otherwise move to next voter
+		#if no voter can manipulate, declare profile not manipulable 
