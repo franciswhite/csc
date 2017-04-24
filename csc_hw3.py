@@ -21,8 +21,17 @@ import numpy as np
 
 #3. algorithm to check whether some player stands to benefit from manipulating the vote (for given profile and rule)
         #Plurality:
-            # look at candidate count: if margin of victory > 1, declare profile not manipulable
+            # look at candidate count: if margin of victory > 1, declare profile not manipulable (no single player can change anything)
             # if margin of victory < 2, note who lost and look at all voter's profile in following way:
-            # if rank of loser > actual winner's rank, declare profile manipulable
-		#otherwise move to next voter
-		#if no voter can manipulate, declare profile not manipulable 
+            # if rank of 2nd > actual winner's rank, declare profile manipulable
+            #otherwise move to next voter
+            #if no voter can manipulate, declare profile not manipulable 
+	
+	#Borda:
+            #look at candidate count: if margin of victory > x-2, declare profile not manipulable (no single player can change anything about winner)
+            #if margin of victory <= m-2, note who was within m-2 of the actual winner (LOSERS) and what the margin of victory (mov) was with respect to them. then look at all voter's profile:
+            #start with first ranked candidate: if candidate = winner, move to next voter. otherwise, move to second ranked candidate for same voter:
+            #if that candidate is ranked higher than winner & in LOSERS & mov<2, then declare profile manipulable. otherwise, move to third ranked candidate:
+	#if that candidate is ranked higher than winner & in LOSERS & mov<3, then declare profile manipulable. otherwise, move to fourth ranked candidate etc.
+            #if, for all voters, no candidate fullfils all three criteria (candidate ranked higher than winner, in LOSERS, mov within manipulable range), declare profile not manipulable
+            #
