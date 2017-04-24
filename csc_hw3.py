@@ -16,7 +16,12 @@ import numpy as np
     #give first candidate x-1 points, give all candidates from second place onwards -1 point.
     #give second candidate x-2 points, give all candidates from third place onwards -1 point.
     #...
-    #give last candidate x-x=0 points, assign noone negative points, move to next row
+    #give last candidate x-x=0 points, assign nobody negative points, move to next row
 #the candidate with most points wins (tie breaking?)
 
-#
+#3. algorithm to check whether some player stands to benefit from manipulating the vote (for given profile and rule)
+        #Plurality:
+            # look at candidate count: if margin of victory > 1, declare profile not manipulable
+            # if margin of victory < 2, note who lost and look at all voter's profile in following way:
+            # if position of loser i in some profile > actual winner candidate's rank in voter's profile, declare profile manipulable
+		#otherwise, declare it unmanipulable
