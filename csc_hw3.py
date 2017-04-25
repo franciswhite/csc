@@ -32,8 +32,9 @@ import numpy as np
             #if margin of victory <= x-1, note who was within x-2 of the actual winner and put them in (LOSERS) set. not what the margin of victory (mov) was with respect to them. then look at all voter's 			profile:
             #start with first ranked candidate: if candidate = winner, move to next voter. otherwise, move to second ranked candidate for same voter:
             #if that candidate is ranked higher than winner & in LOSERS, then check winner's rank: if (mov) of winner wrt to second candidate <= 1+ (x-rank of winner), then declare profile manipulable. 			(1 for putting second placed candidate on top, (x-rank of winner) for putting winner at the bottom). otherwise, move to third ranked candidate:
-	    #if that candidate is ranked higher than winner & in LOSERS & mov<3, then declare profile manipulable. otherwise, move to fourth ranked candidate etc.
-            #if, for all voters, no candidate fullfils all three criteria (candidate ranked higher than winner, in LOSERS, mov within manipulable range), declare profile not manipulable
+            #if that candidate is ranked higher than winner & in LOSERS, then check winner's rank: if (mov) of winner wrt to third candidate <= 2+ (x-rank of winner), then declare profile manipulable. 			(2 for putting third placed candidate on top, (x-rank of winner) for putting winner at the bottom). otherwise, move to forth ranked candidate:
+            #etc.
+            #if, for all voters, no candidate fullfils all three criteria (candidate ranked higher than winner, in LOSERS, within manipulable range), declare profile not manipulable
             
 	#Copeland:
             #
