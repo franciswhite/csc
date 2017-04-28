@@ -24,7 +24,23 @@
 \begin{document}
 \maketitle
 
-\section*{Question 1}
+\section*{Question 4}
+\subsection*{a}
+\fbox{\begin{minipage}{45em}
+\textbf{Q}\\
+Input: Some profile $\mathbf{R}\in \mathcal{L}(X)^n$ and some voting rule $F:\mathcal{L}(X)^n \rightarrow \mathcal{L}(X)$ and some candidate $s\in X$ and an integer $z$ between $1$ and $|X|$ that corresponds to a rank in the preference order $F$ yields.\\
+Question: Given $\mathbf{R}$ as input to $F$, is $s$ in spot number $z$ of $F(\mathbf{R})$?
+\end{minipage}}\\
+
+\noindent We can solve the search problem in $|X|^2$ as follows:\\
+Given some profile $\mathbf{R}$ and some voting rule $F$, we can ask the Oracle for each $x\in X$ whether $x$ is in the first spot in . If the answer is positive, we note put $x$ in our constructed profile and move to the second spot. If it is negative, we move the the next candidate. This maximally takes $|X|$ many queries. We then do this for each of the $|X|$ spots in our constructed profile $F(\mathbf{R})$. For each successive spot we need to consider one candidate less because we already assigned it to some spot. Thus, our seach will take maximally $\tfrac{|X|*((|X|+1)}{2}$ many time steps. \\Even if we are lazy and do consider all candidates in all spots the search will only take $|X|^2$, which is still polynomial.
+\subsection*{b}
+The search problem is still solvable in P-time. Each query took us previously one time unit. Since we had to make $\tfrac{|X|*((|X|+1)}{2}$ many queries \textbf{Q}'s complexity was exactly this and thus polynomial. As each query now requires polynomial time, we can multiply the number of queries by a polynomial to obtain the new complexity. The product of two polynomials is still polynomial, so the the complexity of the problem is still polynomial.
+\subsection*{c}
+I cannot show it because I do not know whether P=NP. I might be able to show that \textbf{Q}$\in NP$; if it then were to turn out that, indeed, $P\neq NP$ this would prove that there is no solution in P-time for \textbf{Q}.
+\section*{Question 5}
+I handed in a a report with Max Rapp and Haukur J{\'o}nnson.
+
 
 
 \end{document}
