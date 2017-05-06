@@ -24,5 +24,10 @@
 \begin{document}
 \maketitle
 \section*{Question 1}
-Basic idea: Given a special candidate $x^*\in X$ and a partial profile $\mathbf{R}\in \mathcal{P}(X)^n$, we compute how many points the special candidate can maximally obtain once $\mathbf{R}$ is completed 
+Basic idea: Given a special candidate $x^*\in X$ and a partial profile $\mathbf{R}\in \mathcal{P}(X)^n$, we compute how many first positions $x^*$ minimally obtains and how many first positions any of the other candidates can maximally obtain for all the ways $\mathbf{R}$ can be completed. If the minimal number of first positions of $x^*$ is still higher than the maximal number of any other candidate, then $x^*$ is a \textit{necessary winner}, otherwise not.\\
+\underline{Algorithm}: \\
+Set up a score counter for all candidates. All candidates have $0$ points initially. \\
+For all individual ballots $r\in\mathbf{R}$, if $x^*$ is a single winner, award her $1$ point. A candidate is a single winner in a profile, if she is in the first position and strictly preferred to the second candidate in the ballot. Note that this requires checking at most two things in the ballot: who is in the first position and the relational symbol ($\succ$ or $\sim$) with respect to the second.\\
+If $x$ is no single winner, award all other candidates in the top positions $1$ point. A candidate is in the top position in a given ballot, if there no alternative is preferred over her. Note that this requires checking the positions of the ballot until encountering the first clear preference of one over the other. All the candidates before the first $\succ$ symbol obtain $1$ point, except for $x^*$.\\
+After having run through all the $r\in \mathbf{R}$, if $x^*$ has the sole maximal score, it is the \textit{necessary winner}, otherwise not.
 \end{document}
