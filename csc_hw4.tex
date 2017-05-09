@@ -7,7 +7,8 @@
 
 \usepackage{mathptmx} % "times new roman"
 \usepackage{amssymb}
-\usepackage{amsmath, amsthm}
+\usepackage[fleqn]{amsmath}
+\usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{enumitem}
 \usepackage{verbatim}
@@ -29,5 +30,34 @@ Basic idea: Given a special candidate $x^*\in X$ and a partial profile $\mathbf{
 Set up a score counter for all candidates. All candidates have $0$ points initially. \\
 For all individual ballots $r\in\mathbf{R}$, if $x^*$ is a single winner, award her $1$ point. A candidate is a single winner in a profile, if she is in the first position and strictly preferred to the second candidate in the ballot. Note that this requires checking at most two things in the ballot: who is in the first position and the relational symbol ($\succ$ or $\sim$) with respect to the second.\\
 If $x$ is no single winner, award all other candidates in the top positions $1$ point. A candidate is in the top position in a given ballot, if there no alternative is preferred over her. Note that this requires checking the positions of the ballot until encountering the first clear preference of one over the other. All the candidates before the first $\succ$ symbol obtain $1$ point, except for $x^*$.\\
-After having run through all the $r\in \mathbf{R}$, if $x^*$ has the sole maximal score, it is the \textit{necessary winner}, otherwise not.
+After having run through all the $r\in \mathbf{R}$, if $x^*$ has the sole maximal score, it is the \textit{necessary winner}, otherwise not.\\
+
+\noindent The algorithm runs in polynomial time because for each individual ballot it needs to go through each individual ballot at most once to award points. That is, it need not take more steps than there are candidates for each ballot. Also, it needs to do this for all voters only once. Computing the maximum amongst the scores also takes no more steps than the number of candidates (compare any two, discard the lower and keep the higher, compare it against the next etc.).
+
+\section*{Question 2}
+Consider the following profile consisting of two voters' preferences. I show below that it creates a circle for iterative voting under the Borda rule and best responses. Iterative voting thus need not converge for the Borda rule and best responses:\\
+$\succ_1=(A\succ B \succ C)$\\
+$\succ_2=(B\succ C \succ A)$\\
+Now consider the following sequence of best responses that the two voters make. $t_i$ denotes the voting round ($t_0$ being the initial round with true preferences), $BS(X)$ the Borda score of candidate $X$. Stars above the reported preferences indicate a change.
+\begin{align*}
+&t_0 & &t_1\\
+& \succ_1=(A\succ B \succ C) &  &\succ_1^*=(A\succ C \succ B) \\
+& \succ_2=(B\succ C \succ A) && \succ_2=(B\succ C \succ A)\\
+&BS(A)=2,BS(B)=3,BS(C)=1, Winner: B &&BS(A)=2,BS(B)=2,BS(C)=2, Winner: A\\
+\end{align*}
+Voter $1$ changed her true ballot $\succ_1$ to $\succ_1^*$ in order to make her preferred option $A$ win (by lexicographical ordering) instead of $B$.
+\begin{align*}
+&t_2 &&t_3\\
+& \succ_1^*=(A\succ C \succ B) & &\succ_1^{**}=(A\succ B \succ C) \\
+& \succ_2^*=(C\succ B \succ A) && \succ_2^*=(C\succ B \succ A)\\
+&BS(A)=2,BS(B)=1,BS(C)=3, Winner: C &&BS(A)=2,BS(B)=2,BS(C)=2, Winner: A\\
+\end{align*}
+In $t_2$ the voter $2$ changed her ballot, so $C$, which she prefers to $A$, would win. In $t_3$ voter $1$ changed her ballot again, so $A$ would win again.
+\begin{align*}
+&t_4\\
+& \succ_1^{**}=(A\succ B \succ C)  \\
+& \succ_2^{**}=(B\succ C \succ A) \\
+&BS(A)=2,BS(B)=3,BS(C)=1, Winner: B\\
+\end{align*}
+Finally, voter $2$ changes her ballot again in $t_4$ and $B$ wins. The profile has come full circle, as $t_0=t_4$.
 \end{document}
