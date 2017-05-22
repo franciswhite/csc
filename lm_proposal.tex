@@ -11,8 +11,8 @@
 \usepackage[english]{babel}
 \usepackage{amsmath}
 
-%\usepackage{biblatex}
-%\addbibresource{lm_references.bib}
+\usepackage{biblatex}
+\addbibresource{lm_references.bib}
 \usepackage{csquotes}
 \begin{document}
 \maketitle
@@ -31,12 +31,12 @@ In our understanding, the best way to achieve this goal is to finely analyze the
 \subsection{Expert study paradigm}
 Expert studies are an established paradigm in science \cite{shaw1990modeling}. A variety of cognitive and non-cognitive tasks have been studied with respect to the differences between novices' and experts' \cite{carter1987processing}\cite{carter1988expert}\cite{peskin1998constructing} \cite{means1985star}. Such studies have at times aided the construction of explicit models to explain expert performance in the respective field. This, in turn, allows precise predictions which can then be subjected to empirical testing.
 
-There is currently no model that explicitly captures the content of expert knowledge in the domain of reasoning. Although there exist models of knowledge in the related field of mathematics \cite{lowe2010skills}, as far as we are aware no such effort has been made for logical reasoning to date. Our modeling of knowledge concerning reasoning is thus novel, albeit related to . 
+There is currently no model that explicitly captures the content of expert knowledge in the domain of reasoning. Although there exist models of knowledge in the related field of mathematics \cite{lowe2010skills}, as far as we are aware no such effort has been made for logical reasoning to date. Our modeling of knowledge concerning reasoning is thus novel, albeit related to the mathematical domain. 
 
-There exists a series of established practices and methods concerning the \emph{elicitation} of expert knowledge for general domains. To our knowledge, there is no canonical method to systematically inquire into experts' mathematical or reasoning skills. Our acquisition of the knowledge that these experts use to solve their respective problems therefore relies on techniques in other domains, for example, in engineering or industrial management \cite{ford1997expert} \cite{cooke1994varieties}. A good deal of the literature on elicitation methods focuses on the acquisition of knowledge that is to be implemented in so-called \emph{expert systems} - computer applications solving complex problems \cite{shadbolt1995knowledge}. This part of the literature is particularly suitable to us, as are ultimate intention in building a conceptual model of expertise in logical reasoning consist in turning it into one at David Marr's algorithmic level. % \cite{marr}
+There exists a series of established practices and methods concerning the \emph{elicitation} of expert knowledge for general domains. To our knowledge, there is no canonical method to systematically inquire into experts' mathematical or reasoning skills. Our acquisition of the knowledge that these experts use to solve their respective problems therefore relies on techniques in other domains, for example, in engineering or industrial management \cite{ford1997expert} \cite{cooke1994varieties}. A good deal of the literature on elicitation methods focuses on the acquisition of knowledge that is to be implemented in so-called \emph{expert systems} - computer applications solving complex problems \cite{shadbolt1995knowledge}. This part of the literature is particularly suitable to us, as are ultimate intention in building a conceptual model of expertise in logical reasoning consist in turning it into one at David Marr's algorithmic level \cite{marr1982computational}.
 
 \subsection{A Computational Model of Logical Knowledge}
-The next step is to create a computational model of reasoning which would incorporate the previously created conceptual model of expert knowledge in logic. It is our understanding that the most suitable modeling paradigm for this purpose is cognitive architecture, as it will enable us to implement declarative as well as procedural knowledge in a clearly distinctive way \cite{sun2015interpreting}. Our hope is that we will be able to match the performance of our model on reasoning tasks to the behavioral data which will be obtained in a course of a study on reasoning in an expert/novice paradigm, the details of which will be presented in section 4.3. 
+The next step is to create a computational model of reasoning which would incorporate the previously created conceptual model of expert knowledge in logic. It is our understanding that the most suitable modeling paradigm for this purpose is cognitive architecture, as it will enable us to implement declarative as well as procedural knowledge in a clearly distinctive way \cite{sun2015interpreting}. Our hope is that we will be able to match the performance of our model on reasoning tasks to the behavioral data which will be obtained in a course of a study on reasoning in an expert/novice paradigm, the details of which will be presented in section 4.3. TASK INFO!!!!!!!!
 \section{Key Questions - Silvan/Julia}
 \textbf{this is the essence of the proposal. Hypotheses should be 
 derived from the key question; the relation between theory and research
@@ -44,29 +44,39 @@ hypotheses should be clearly specified; not more than 500 words\\
 a) Formulate the research questions based on previous research\\
 b) Translate the specific research questions into research hypotheses }\\
 
-How accurate is Stanovich's assesment according to which the accuracy of performance on a reasoning task is determined by one's mindware? What kind of knowledge structure would such a mindware have?\\
+How accurate is Stanovich's assessment according to which the accuracy of performance on a reasoning task is determined by one's mindware? What kind of knowledge structure would such a mindware have?\\
 \indent Is experts' performance on logical reasoning task to be explained by \emph{procedural} knowledge - presumably consisting of an interaction of general intelligence and prior experience with similar problems - or by \emph{factual} knowledge - knowing rules of formal logic?
 Related to this issue is the question to what extent the logical reasoning of an individual can improve through suitable training. If it were possible to determine the extent in which performance is aided by declarative knowledge, then the teaching of logical reasoning would certainly benefit. It is thus of interest to determine the influence of expertise in formal symbolic logic on human performance in logical reasoning tasks.
 
-As there is currently no literature on methods and techniques which professional logicians use to tackle logical problems, it is pertinent to inquire into the strategies which experts in the field of formal logic employ to tackle reasoning problems. There is a methodological difficulty, however: Classically, knowledge acquisition was viewed as the process of extracting, or mining, immediately from the knowledge source. Difficulties of knowledge elicitation and issues surrounding the end product of it have led to increased appreciation of the immense complexity of knowledge. Consequently, a more constructivist stance has taken hold, construing knowledge as constructed by an expert and reconstructed by the elicitor trying to pick her beautiful nose. "In short, knowledge acquisition is modeling or construction, not mining. Therefore, the result of knowledge acquisition is a model, and like all models it represents the object of the modeling enterprise to different degree of accuracy."\cite{cooke1994varieties}, p. 2
+As there is currently no literature on methods and techniques which professional logicians use to tackle logical problems, it is pertinent to inquire into the strategies which experts in the field of formal logic employ to tackle reasoning problems. There is a methodological difficulty, however: Classically, knowledge acquisition was viewed as the process of extracting, or mining, immediately from the knowledge source. Difficulties of knowledge elicitation and issues surrounding the end product of it have led to increased appreciation of the immense complexity of knowledge. Consequently, a more constructivist stance has taken hold, construing knowledge as constructed by an expert and subsequently reconstructed by the knowledge engineer. Knowledge acquisition results in a model which represents the object of the modeling endeavor only to a certain degree of accuracy. \cite{cooke1994varieties}, p. 2
 \section{Procedure}
 \textbf{not more than 500 words \\
 a) Operationalize the research questions in a clear manner into a modeling strategy\\
 b) Describe the procedures for conducting the research (and collecting
  the data) }\\\\
 \subsection{Conceptual Model of Expert Logical Knowledge}
+In the knowledge elicitation literature the \emph{differential access hypothesis} holds that by using different methods of elicitation one access to different aspects of knowledge in a particular domain of expertise \cite{cooke1994varieties}, p. 4. . Given this assumption, it is clear that characterization of the relevant aspect of logical reasoning expertise prior to the actual elicitation process can play a crucial role for the results obtained. \cite{shaw1990modeling} This being the case, we initially consider the knowledge likely to be involved in very broad terms. This choice reflected in the use of a wide-ranging combination of techniques for elicitation. The elicitation process then works in two steps.
+
+First, we use a mixture of so-called \emph{direct} elicitation techniques for which the knowledge engineer engages immediately with the expert \cite{cooke1994varieties}. Concretely, we employ structured interviews, focus discussions and think aloud protocols to obtain an idea how experts tackle logical reasoning tasks.
+
+In a second step, we turn the knowledge thus elicited in a conceptual model based on the \emph{Belief, Desire and Intention} framework \cite{both2007formal}. Originally developed for expert knowledge in the domain of military tactical reasoning, BDI is able to process understanding of expert knowledge on a purely conceptual level to complete formalization. In the latter stage it can then be implemented in an ACT-R model to yield precise predictions. 
+
+Since the verbal elicitation techniques used in our step yield expressions of expert knowledge in terms similar to beliefs and intentions, the BDI framework is in an ideal position to digest it. Moreover, BDI is based on \emph{Procedural Reasoning System} (PSR) which was originally developed to control an autonomous
+mobile robot. Besides containing attitudes of belief, desire, and intention, PSR has the ability to reason about its own internal state and modifying them \cite{georgeff1987reactive}.
+
+Within BDI we are able to formalize the insights from the elicitation phase to a degree that allows the construction of an explicit ACT-R model of the logical reasoning task.
 \subsection{ACT-r Model of Logical Knowledge Acquisition}
 \subsection{Behavioral research}
 
  1. expert/novice: (feed conceptual part)\\
-a. performance ona particular reasoning task (selection task (MP)? $\implies$ evaluation of Stanovic's hypothesis\\
+a. performance on a particular reasoning task (selection task (MP)? $\implies$ evaluation of Stanovich's hypothesis\\
  b. categorization task (reference?) $\implies$ declarative/procedural knowledge, deep /surface structure\\
  2. experimental phase: (feeds ACT-R part) - THIS IS ONLY A SKETCH! PLZ NOT THE BELT AGAIN!\\
  Control Group: left untrained\\
  Training Group 1: logical training: declarative teaching paradigm\\
  Training Group 2: logical training: procedural paradigm\\
  Training Group 3: logical training: have both trainings\\
- Group Selection: screened for the factors mentioned by Stanovic
+ Group Selection: screened for the factors mentioned by Stanovich
  \section{Intended Results - Julia}
 \textbf{clarify what the implication of possible outcomes would be 
 (per hypothesis) for the research questions as well as for the theory; not more than 500 words \\
@@ -82,6 +92,6 @@ Second, educational strategies.
 
 Third, expert knowledge paradigm extension.
 
-%\printbibliography
+\printbibliography
 
 \end{document}
