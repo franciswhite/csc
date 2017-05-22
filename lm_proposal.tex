@@ -20,49 +20,58 @@
 \begin{document}
 \maketitle
 \section{Aim of the Research}
-A large body of studies on reasoning suggest that people often perform inference in a way that deviates from classical logical norms. Subjects support ungrounded conclusions, for instance, or do not properly check validities of rules \textbf{(references)}. One explanations of this phenomenon is proposed by Keith Stanovich, who claims that the failure of some people and the success of others in following normative rules of inference while performing a reasoning task is a consequence of individual differences in their cognitive capacity and prior knowledge \cite{toplak2014rational}. He proposes that the accuracy of reasoning can be improved by suitable education \cite{stenning2012human}.
+A large body of studies on reasoning suggest that people often perform inference in a way that deviates from classical logical norms. Subjects support ungrounded conclusions, for instance, or do not properly check validities of rules \textbf{(references)}.
+%Need references for poor human performance.
+One explanations of this phenomenon is proposed by Keith Stanovich, who claims that the failure of some people and the success of others in following normative rules of inference while performing a reasoning task is a consequence of individual differences in their cognitive capacity and prior knowledge \cite{toplak2014rational}. He proposes that the accuracy of reasoning can be improved by suitable education \cite{stenning2012human}.
 
 The implications of this final claim turn out to be problematic to assess, as there is currently no proper model available of knowledge structure which is possessed by people highly skilled in reasoning. Moreover, in the heuristics and bias study paradigm, participants with any logical or philosophical training are, to our knowledge, always excluded from the sample. The main idea of the current project is to try to determine the knowledge structure of reasoning skills by means of studying how experts in this domain, namely logicians, approach reasoning tasks. Stanovich's theory would predict that they perform significantly better than a comparable non-expert group. 
 
 If it is indeed so, what can explain this difference in performance? Is it the fact that experts explicitly learned a set of rules concerning reasoning which aids them to solve reasoning puzzles, or is it a difficult to describe know-how, experience and skills - sometimes named \emph{procedural knowledge} - which they have obtained throughout their training? Our proposal is to thoroughly study the structure of expert knowledge in reasoning tasks, and then to implement this knowledge structure in an ACT-R model of the Wason selection task\cite{wason1968reasoning}. In a first step we want to conduct a study in the novice/expert paradigm, which allows us to set up the initial assumptions of the modeling process and, eventually, guide us in determining the conceptual plausibility of our ACT-R model.
 
 \section{Prior Research}
+The following contains an overview over previous research done in the field.
 \subsection{Theories of reasoning and dual-processing theory}
 In the past 30 years, a vast body of cognitive psychology research has been devoted to the study of reasoning. One of the key observation it produced is that in a range of inferential tasks subjects exhibit heuristics and biases which lead them to mistaken conclusions when compared with the normative rules of reasoning (references). This has become known as the descriptive-normative gap. There are a number of theoretical accounts of this phenomenon which consider different features of cognitive abilities responsible for the effect. Among them one can find explanations that computational limitations are responsible for the difference between observed performance and normative predictions \cite{oaksford1993reasoning}, or that the subjects misinterpretat the task at hand \cite{stenning2012human}.
 
-According to Stanovich and West \cite{ackerman1999learning}, however, these theories disregard all too easily the fact that some people give the standard normative response.  If deviations from classical logical reasoning rules are indeed to be explained by reference to, say, computational limitations in the human brain, then how is it to be explained that some subjects consistently \emph{do} reason correctly? Instead, Stanovich \cite{evans2013dual} proposes that the gap should be analyzed in terms of individual differences. His claim is that there is a strong covariance between \textit{cognitive sophistication} (cognitive ability, development and thinking dispositions) and performance during reasoning tasks.\\ 
-\indent This relationship, in turn, should be understood in terms of the dual-process theory, which postulates the distinction between the intuitive (type 1) and the deliberative types of thinking (type 2) \cite{evans2013dual}. In order to successfully complete a reasoning task, a participant must inhibit the more immediate response which comes out as a result of type 1 processing and override it with type 2 processing response, which should be in accordance with the normative rules of inference. A high level of cognitive sophistication enables the person to make that substitution, which is necessary for an optimal performance. The second response originates from what Stanovich refers to as \textit{mindware}, namely the rules, knowledge, procedures and strategies which are stored in memory and can be used during decision making. Interestingly, he does not specify what kind of knowledge structure does the mindware possess. This will be the specific topic of the inquiry of the current research project. 
+According to Stanovich and West \cite{ackerman1999learning}, however, these theories disregard all too easily the fact that some people give the standard normative response.  If deviations from classical logical reasoning rules are indeed to be explained by reference to, say, computational limitations in the human brain, then how is it to be explained that some subjects consistently \emph{do} reason correctly? Instead, Stanovich \cite{evans2013dual} proposes that the gap should be analyzed in terms of individual differences. His claim is that there is a strong correlation between \textit{cognitive sophistication} (cognitive ability, development and thinking dispositions) and performance during reasoning tasks.
 
-In our understanding, the best way to achieve this goal is to finely analyze the knowledge structures of people who have been trained in reasoning, namely logicians. This is motivated by the idea that due to extensive training, the experts’ knowledge on the subject is not only more developed, but also more specifically organized along the declarative/procedural distinction \cite{halpern1992enhancing}. 
+This relationship, in turn, should be understood in terms of the dual-process theory, which postulates the distinction between the intuitive (Type 1) - sometimes called \emph{procedural} - and the deliberative types of thinking (Type 2) - or \emph{declarative} \cite{evans2013dual}. In order to successfully complete a reasoning task, a participant must inhibit the more immediate response which comes out as a result of Type 1 processing and override it with Type 2 processing response, which should be in accordance with the normative rules of inference. A high level of cognitive sophistication enables the person to make that substitution, which is necessary for an optimal performance. The second response originates from what Stanovich refers to as \emph{mindware}, namely the rules, knowledge, procedures and strategies which are stored in memory and can be used during decision making. Interestingly, he does not specify what kind of knowledge structure the mindware possesses. This is precisely the specific topic of the inquiry of the current research project.
 
-\subsection{Expert study paradigm}
+In our understanding, the best way to achieve this goal is to finely analyze the knowledge structures of people who have been trained in reasoning, namely logicians. The motivation behind this idea is that due to extensive training, the experts’ knowledge on the subject is not only more developed, but also more specifically organized along the declarative/procedural distinction \cite{halpern1992enhancing}. 
+
+\subsection{Expert Study paradigm}
 Expert studies are an established paradigm in science \cite{shaw1990modeling}. A variety of cognitive and non-cognitive tasks have been studied with respect to the differences between novices' and experts' \cite{carter1987processing}\cite{carter1988expert}\cite{peskin1998constructing} \cite{means1985star}. Such studies have at times aided the construction of explicit models to explain expert performance in the respective field. This, in turn, allows precise predictions which can then be subjected to empirical testing.
 
 There is currently no model that explicitly captures the content of expert knowledge in the domain of reasoning. Although there exist models of knowledge in the related field of mathematics \cite{lowe2010skills}, as far as we are aware no such effort has been made for logical reasoning to date. Our modeling of knowledge concerning reasoning is thus novel, albeit related to the mathematical domain. 
 
-There exists a series of established practices and methods concerning the \emph{elicitation} of expert knowledge for general domains. To our knowledge, there is no canonical method to systematically inquire into experts' mathematical or reasoning skills. Our acquisition of the knowledge that these experts use to solve their respective problems therefore relies on techniques in other domains, for example, in engineering or industrial management \cite{ford1997expert} \cite{cooke1994varieties}. A good deal of the literature on elicitation methods focuses on the acquisition of knowledge that is to be implemented in so-called \emph{expert systems} - computer applications solving complex problems \cite{shadbolt1995knowledge}. This part of the literature is particularly suitable to us, as are ultimate intention in building a conceptual model of expertise in logical reasoning consist in turning it into one at David Marr's algorithmic level \cite{marr1982computational}.
+There exists a series of established practices and methods concerning the \emph{elicitation} of expert knowledge for general domains. To our knowledge, there is no canonical method to systematically inquire into experts' mathematical or reasoning skills. Our acquisition of the knowledge that these experts use to solve their respective problems therefore relies on techniques in other domains, for example, in engineering or industrial management \cite{ford1997expert} \cite{cooke1994varieties}. Part of the elicitation methods focus on the acquisition of knowledge that is to be implemented in so-called \emph{expert systems} - computer applications solving complex problems \cite{shadbolt1995knowledge}. We use precisely such a conceptual framework to represent the findings from the elicitation phase, as are ultimate intention in building a conceptual model of expertise in logical reasoning consist in turning it into one at David Marr's algorithmic level \cite{marr1982computational}.
 
 \subsection{A Computational Model of Logical Knowledge}
-The next step is to create a computational model of a reasoning task, Wason selection task, which would incorporate the previously created conceptual model of expert knowledge in logic. It is our understanding that the most suitable modeling paradigm for this purpose is cognitive architecture, as it will enable us to implement declarative as well as procedural knowledge in a clearly distinctive way \cite{sun2015interpreting}. Our hope is that we will be able to match the performance of our model on reasoning tasks to the behavioral data which will be obtained in a course of a study on reasoning in an expert/novice paradigm, the details of which will be presented in section 4.3.
-\section{Key Questions - Silvan/Julia}
-\textbf{this is the essence of the proposal. Hypotheses should be 
-derived from the key question; the relation between theory and research
-hypotheses should be clearly specified; not more than 500 words\\
-a) Formulate the research questions based on previous research\\
-b) Translate the specific research questions into research hypotheses }\\
+The goal is to create a computational model of a reasoning task, Wason's selection task, which would incorporate the previously created conceptual model of expert knowledge in logic. It is our understanding that the most suitable modeling paradigm for this purpose is cognitive architecture, as it will enable us to implement declarative as well as procedural knowledge in a clearly distinctive way \cite{sun2015interpreting}. Our hope is that we will be able to match the performance of our model on reasoning tasks to the behavioral data which will be obtained in a course of a study on reasoning in an expert/novice paradigm. Because setting up such a study is supremely complex, however, we presently focus on implementing the model. Obtaining actual data by means of an empirical study is left to future work.
 
-How accurate is Stanovich's assessment according to which the accuracy of performance on a reasoning task is determined by one's mindware? What kind of knowledge structure would such a mindware have?\\
-\indent Is experts' performance on logical reasoning task to be explained by \emph{procedural} knowledge - presumably consisting of an interaction of general intelligence and prior experience with similar problems - or by \emph{factual} knowledge - knowing rules of formal logic?
-Related to this issue is the question to what extent the logical reasoning of an individual can improve through suitable training. If it were possible to determine the extent in which performance is aided by declarative knowledge, then the teaching of logical reasoning would certainly benefit. It is thus of interest to determine the influence of expertise in formal symbolic logic on human performance in logical reasoning tasks.
+\section{Key Questions}
+%\textbf{this is the essence of the proposal. Hypotheses should be 
+%derived from the key question; the relation between theory and research
+%hypotheses should be clearly specified; not more than 500 words\\
+%a) Formulate the research questions based on previous research\\
+%b) Translate the specific research questions into research hypotheses }\\
+
+The central question we want to pursue is how accurate Stanovich's assessment is that the accuracy of performance on a reasoning task is determined by a person's mindware? 
+In order to give a satisfying answer to this  we need to provide a theory as to what kind of knowledge structure such mindware possesses.
+Providing such an account involves responding to whether experts' performance on logical reasoning tasks need to explained by procedural knowledge - presumably consisting of an interaction of general intelligence and prior experience with similar problems - or by declarative knowledge - knowing rules of formal logic?
+
+Concretely, in order to test Stanovich's hypothesis that expert knowledge indeed contains a declarative knowledge, we want to derive quantitative predictions for the well-studied Wason selection task. Logicians should not only use the Modus Ponens rule in the procedural sense, but also retrieve its actual form from declarative memory and subsequently perform reasoning by cases. Proceeding in this way should make their performance conform with normative inference.
+
+Related to this issue is the question to what extent the logical reasoning of an individual can improve through suitable training. If it were possible to determine the extent to which performance is aided by declarative knowledge, then the teaching of logical reasoning would certainly benefit. It is thus of interest to determine the influence of expertise in formal symbolic logic on human performance in logical reasoning tasks.
 
 As there is currently no literature on methods and techniques which professional logicians use to tackle logical problems, it is pertinent to inquire into the strategies which experts in the field of formal logic employ to tackle reasoning problems. There is a methodological difficulty, however: Classically, knowledge acquisition was viewed as the process of extracting, or mining, immediately from the knowledge source. Difficulties of knowledge elicitation and issues surrounding the end product of it have led to increased appreciation of the immense complexity of knowledge. Consequently, a more constructivist stance has taken hold, construing knowledge as constructed by an expert and subsequently reconstructed by the knowledge engineer. Knowledge acquisition results in a model which represents the object of the modeling endeavor only to a certain degree of accuracy. \cite{cooke1994varieties}, p. 2
 
 The expert knowledge conceptual model will be implemented in the ACT-R model of the Wason selection task. The question we will attempt to answer by means of the model is what kind of knowledge structures are involved in performing this particular reasoning task? We hope that we will be able to recreate the expert's thought process well enough so that the output we obtain can be matched with behavioral data from the experimental phase.
 \section{Procedure}
-\textbf{not more than 500 words \\
-a) Operationalize the research questions in a clear manner into a modeling strategy\\
-b) Describe the procedures for conducting the research (and collecting
- the data) }\\\\
+%\textbf{not more than 500 words \\
+%a) Operationalize the research questions in a clear manner into a modeling strategy\\
+%b) Describe the procedures for conducting the research (and collecting
+% the data) }\\\\
 \subsection{Conceptual Model of Expert Logical Knowledge}
 In the knowledge elicitation literature the \emph{differential access hypothesis} holds that by using different methods of elicitation one access to different aspects of knowledge in a particular domain of expertise \cite{cooke1994varieties}, p. 4. . Given this assumption, it is clear that characterization of the relevant aspect of logical reasoning expertise prior to the actual elicitation process can play a crucial role for the results obtained \cite{shaw1990modeling}. This being the case, we initially consider the knowledge likely to be involved in very broad terms. This choice is reflected in the use of a wide-ranging combination of elicitation techniques. Elicitation and processing of expert knowledge then works in two steps.
 
@@ -73,34 +82,33 @@ In a second step, we turn the knowledge thus elicited in a conceptual model base
 Since the verbal elicitation techniques used in our step yield expressions of expert knowledge in terms similar to beliefs and intentions, the BDI framework is in an ideal position to digest it. Moreover, BDI is based on \emph{Procedural Reasoning System} (PSR) which was originally developed to control an autonomous
 mobile robot. Besides containing attitudes of belief, desire, and intention, PSR has the ability to reason about its own internal state and modifying them \cite{georgeff1987reactive}.
 
-Within BDI we are able to formalize the insights from the elicitation phase to a degree that allows the construction of an explicit ACT-R model of the logical reasoning task.
+Within BDI we are able to formalize the insights from the elicitation phase to a degree that allows the construction of an explicit ACT-R model of the logical reasoning task. 
 \subsection{ACT-R Model of Wason Selection Task}
-\textit{Adaptive Control of Thought- Rational} is a cognitive architecture, i.e. a theory for simulating and understanding human cognition \cite{sun2008cambridge}. The schematic structure of the ACT-R framework is presented on Figure 1\cite{new2016}. 
-\begin{figure}{h}%{0.25\textwidth}
+Wason selection task (Figure 2.) is a most established task in the bias and heuristics literature. Stenning and van Lambalgen even call it \textit{The Mother of All Reasoning tasks} \cite{stenning2012human}(p.44). The experiment has been replicated many times, and the pattern of results is steadily obtained. The rule can be thought of as material implication. The most commonly selected card is D, which is in accordance with the normative response. The other card which should be turned is 2, as then the rule is checked through contraposition. Interestingly though, this option is only chosen by around 10\% of the participants, while 45\% chose 5 instead. This is often called the \textit{matching bias}, as both D and 5 are explicitly mentioned in the rule\cite{evans2013dual}.
+\begin{figure}[h]
+\includegraphics[width=0.5\linewidth]{wst.jpg} 
+\caption{Wason selection task}
+\label{fig:subim1}
+\end{figure}\\
+\indent \textit{Adaptive Control of Thought- Rational} is a cognitive architecture, i.e. a theory for simulating and understanding human cognition \cite{sun2008cambridge}. The schematic structure of the ACT-R framework is presented on Figure 1\cite{new2016}.
+
+\begin{figure}[h]
 \includegraphics[width=0.5\linewidth]{act.png} 
 \caption{ACT-R}
 \label{fig:subim1}
 \end{figure}
-\\According to Both and Heuvelink\cite{both2007formal}, the two key elements of the process of modeling a task in this paradigm are the following:
+
+According to Both and Heuvelink\cite{both2007formal}, the two key elements of the process of modeling a task in this paradigm are the following:
 \begin{enumerate}
 \item the modeling of the body of knowledge which is required for the completion of the task;
 \item \textit{modeling of a cognitively valid theory of the task execution}, p.1.
 \end{enumerate}
-The BDI model obtained from the conceptual study of expert knowledge will serve as the basis for the implementation of the knowledge structure involved in the task. The body of procedural knowledge of the experts will be translated into implementable production rule. The declarative memory module will be filled with information items which are at the experts' disposal.\\
-\indent According to our predictions, while solving the selection task, logicians not only access the Modus Ponens rule in the procedural sense, but also retrieve its actual form from declarative memory and that is why the computation they perform is in high accordance with normative inference. \\
-\indent We will rely on Stanovich's dual process theory in modeling the actual performance of a task. The type 1 processing will be implemented analogically to the previously established paradigm for modeling intuitive knowledge in ACT-R \cite{kennedy2012modeling}. Type 2 processing and the process of cognitive decoupling, i.e. overriding the result of type 1 processing with one of type 2, will 
+The BDI model obtained from the conceptual study of expert knowledge will serve as the basis for the implementation of the knowledge structure involved in the task. The body of procedural knowledge of the experts will be translated into implementable production rule. The declarative memory module will be filled with information items which are at the experts' disposal.
 
-\subsection{Behavioral research}
+The goal of the Wason selection task is to check the validity of the rule by the means of making a correct inference. According to our predictions, while solving the selection task, logicians not only access the Modus Ponens rule in the procedural sense, but also retrieve its actual form from declarative memory and perform reasoning by cases, where they check the validity of the rule with respect to MP. That is why the computation they perform is in high accordance with normative inference.
 
- 1. expert/novice: (feed conceptual part)\\
-a. performance on a particular reasoning task (selection task (MP)? $\implies$ evaluation of Stanovich's hypothesis\\
- b. categorization task (reference?) $\implies$ declarative/procedural knowledge, deep /surface structure\\
- 2. experimental phase: (feeds ACT-R part) - THIS IS ONLY A SKETCH! PLZ NOT THE BELT AGAIN!\\
- Control Group: left untrained\\
- Training Group 1: logical training: declarative teaching paradigm\\
- Training Group 2: logical training: procedural paradigm\\
- Training Group 3: logical training: have both trainings\\
- Group Selection: screened for the factors mentioned by Stanovich
+We will rely on Stanovich's dual process theory in modeling the actual performance of a task. The type 1 processing will be implemented analogically to the previously established paradigm for modeling intuitive knowledge in ACT-R \cite{kennedy2012modeling}. In modeling type 2 processing and the process of cognitive decoupling, i.e. overriding the result of type 1 processing with one of type 2, we will derive from Othalia Larue and Ion Juvina work on intuition\cite{modelofintuition}.
+
  \section{Intended Results - Julia}
 \textbf{clarify what the implication of possible outcomes would be 
 (per hypothesis) for the research questions as well as for the theory; not more than 500 words \\
@@ -110,11 +118,11 @@ questions? \\
 • What are the (alternative) interpretations if the results do (not) 
 match the expectations?} 
 There are principally three findings we aim for:\\
-First, training in formal logic should have a positive effect on performance on reasoning tasks. In case such an effect is indeed observable, our experimental set-up allows us to isolate the precise content of this t. That is, we are able to distinguish between improvements rooted in acquiring declarative knowledge in the form of logical rules and improvements attributable to procedural knowledge.
+Firstly, our models will shed light and expand on Stanovich's theory of reasoning, which is based on the dual-process theory. We think that the models will plausibly represent a knowledge structure, or mindware, which is responsible for carrying out logical reasoning in an expert manner. 
 
-Second, educational strategies.
+Furthermore, we want to evaluate to what extent does training in formal logic should have a positive effect on performance on reasoning tasks. In case such an effect is indeed observable, our experimental set-up allows us to isolate the precise content of it. That is, we are able to distinguish between improvements rooted in acquiring declarative knowledge in the form of logical rules and improvements attributable to procedural knowledge. This in turn can provide useful insight for the development of educational strategies in logical training.
 
-Third, expert knowledge paradigm extension.
+Finally, our hope is that the current project will result in expert knowledge paradigm extension. Up until now, there is no conceptual or computational model of expert knowledge in any of the abstract disciplines of science. 
 
 \printbibliography
 
