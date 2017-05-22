@@ -11,36 +11,32 @@
 \usepackage[english]{babel}
 \usepackage{amsmath}
 
-\usepackage{biblatex}
-\addbibresource{lm_references.bib}
+%\usepackage{biblatex}
+%\addbibresource{lm_references.bib}
 \usepackage{csquotes}
 \begin{document}
 \maketitle
-\section{Aim of the Research - Julia}
-A large body of findings of studies on reasoning suggest that people often perform inference in a non-normative way, for instance support ungrounded conclusions or do not know how to properly check validities of rules (references). One of the available explanations of this is proposed by Keith Stanovich, namely: (on the relationship between reasoning and rationality) there is a normative/descriptive gap between the rules of logic and actual human reasoning and hence there is much room for \textbf{improvement by suitable education}.\\ 
-\indent This turns out to be problematic, as there is no proper model of what type of knowledge acquisition should be considered here as suitable education? Is it the familiarity with the rules or being accustomed to solving this type of problems? Is there a way to make this determination? \\
-\indent The idea which comes to mind to study how experts in this domain, namely logicians,  approach reasoning tasks. The prediction of Stanovich's theory would be that they perform much better. Why should it be the case? Is it the fact that they declaratively know the proper rules of reasoning which makes them better at solving reasoning puzzles or is it the skills (procedural knowledge) which they have obtained throughout their training? Our proposal is to thoroughly study the structure of expert knowledge in logic, and then try to implement this knowledge structure in an ACT-R model. This would be followed by a study in the novice/expert paradigm, thanks to which we could determine the empirical plausibility of the ACT-R model.  \\ %these are 266 words
-\textbf{Less than 200 words}
+\section{Aim of the Research}
+A large body of findings of studies on reasoning suggest that people often perform inference in a non-normative way, for instance support ungrounded conclusions or do not know how to properly check validities of rules (references). One of the available explanations of this is proposed by Keith Stanovich, who claims that the failure of some people and the success of others in following normative rules of inference while performing a reasoning task is a consequence of individual differences in their cognitive capacity and prior knowledge \cite{toplak2014rational}. He proposes that the accuracy of reasoning can be improved by suitable education \cite{stenning2012human}.\\ 
+\indent The implications of this final claim turn out to be problematic to assess, as there is no proper model of what is the knowledge structure which is possessed by the people who are highly skilled in reasoning. The main idea of the current project is to try to determine that by means of studying how experts in this domain, namely logicians, approach reasoning tasks. The prediction of Stanovich's theory would be that they perform much better. Why should it be the case? Is it the fact that they declaratively know the proper rules of reasoning which makes them better at solving reasoning puzzles or is it the skills (procedural knowledge) which they have obtained throughout their training? Our proposal is to thoroughly study the structure of expert knowledge in logic, and then try to implement this knowledge structure in an ACT-R model. This would be followed by a study in the novice/expert paradigm, thanks to which we could determine the empirical plausibility of the ACT-R model.  \\ 
 
-\section{Prior Research - Silvan(Lowe, Elicitation)/Julia(Knowledge Model)}
-\textbf{comprehensible literature review of the research field, 
-converging upon the research questions;  not more than 500 words\\
-• Describe the state of affairs in the current research field based on the existing body of literature \\
-• Elaborate on the theoretical framework\\
-• Clarify how previous research leads to the research questions of the current proposal }\\
-\subsection{Theories of reasoning and types of knowledge}
-Sub-optimal performance. a broad spectrum of explanations
-Stanovich: rules \& individual differences, factors like age, cognitive capacities and so on. \\
-paradigm: exclude people with logical training from the sample
-Why do we need a model of expert knowledge? what questions can be answered? We want to know \textbf{in what way} the performance is enhanced. 
+\section{Prior Research }
+\subsection{Theories of reasoning and dual-processing theory}
+In the past 30 years, a vast body of cognitive psychology research has been devoted to the study of reasoning. The key observation, namely that in the so called heuristics and biases paradigm people demonstrate a range of inferential heuristics and biases which lead them mistaken conclusions when compared with the normative rules of reasoning (references), has become known as the gap between the descriptive and the normative. There is a number of theoretical accounts of this phenomenon, which consider different features of cognitive abilities responsible for the effect, among which are computational limitations \cite{oaksford1993reasoning}, or task misinterpretation \cite{stenning2012human}. \\
+\indent However, according to Stanovich and West \cite{ackerman1999learning}, these theories do not take the fact that some people give the standard normative response seriously enough. Instead, Stanovich \cite{evans2013dual} proposes that the gap should be analyzed in terms of individual differences. The claim is that there is a strong covariance between \textit{cognitive sophistication} (cognitive ability, development and thinking dispositions) and performance during reasoning tasks.\\ 
+\indent This relationship, in turn, should be understood in terms of the dual-process theory, which postulates the distinction between the intuitive (type 1) and the deliberative types of thinking (type 2) \cite{evans2013dual}. In order to successfully complete a reasoning task, a participant must inhibit the more immediate response which comes out as a result of type 1 processing and override it with type 2 processing response, which should be in accordance with the normative rules of inference. A high level of cognitive sophistication enables the person to make that substitution, which is necessary for an optimal performance. The second response originates from what Stanovich refers to as \textit{mindware}, namely the rules, knowledge, procedures and strategies which are stored in memory and can be used during decision making. Interestingly, he does not specify what kind of knowledge structure does the mindware possess. This will be the specific topic of the inquiry of the current research project. 
+
+In our understanding, the best way to achieve this goal is to finely analyze the knowledge structures of people who have been trained in reasoning, namely logicians. This is motivated by the idea that due to extensive training, the experts’ knowledge on the subject is not only more developed, but also more specifically organized along the declarative/procedural distinction \cite{halpern1992enhancing}. 
+
 \subsection{Expert study paradigm}
 Expert studies are an established paradigm in science \cite{shaw1990modeling}. A variety of cognitive and non-cognitive tasks have been studied with respect to the differences between novices' and experts' \cite{carter1987processing}\cite{carter1988expert}\cite{peskin1998constructing} \cite{means1985star}. Such studies have at times aided the construction of explicit models to explain expert performance in the respective field. This, in turn, allows precise predictions which can then be subjected to empirical testing.
 
 There is currently no model that explicitly captures the content of expert knowledge in the domain of reasoning. Although there exist models of knowledge in the related field of mathematics \cite{lowe2010skills}, as far as we are aware no such effort has been made for logical reasoning to date. Our modeling of knowledge concerning reasoning is thus novel, albeit related to . 
 
 There exists a series of established practices and methods concerning the \emph{elicitation} of expert knowledge for general domains. To our knowledge, there is no canonical method to systematically inquire into experts' mathematical or reasoning skills. Our acquisition of the knowledge that these experts use to solve their respective problems therefore relies on techniques in other domains, for example, in engineering or industrial management \cite{ford1997expert} \cite{cooke1994varieties}. A good deal of the literature on elicitation methods focuses on the acquisition of knowledge that is to be implemented in so-called \emph{expert systems} - computer applications solving complex problems \cite{shadbolt1995knowledge}. This part of the literature is particularly suitable to us, as are ultimate intention in building a conceptual model of expertise in logical reasoning consist in turning it into one at David Marr's algorithmic level. % \cite{marr}
-\subsection{A Computational Model of Logical Knowledge Acquisition}
-ACT-r ; gives us means to implement what we know from the conceptual model about the descriptive and the procedural aspects of logical knowledge
+
+\subsection{A Computational Model of Logical Knowledge}
+The next step is to create a computational model of reasoning which would incorporate the previously created conceptual model of expert knowledge in logic. It is our understanding that the most suitable modeling paradigm for this purpose is cognitive architecture, as it will enable us to implement declarative as well as procedural knowledge in a clearly distinctive way \cite{sun2015interpreting}. Our hope is that we will be able to match the performance of our model on reasoning tasks to the behavioral data which will be obtained in a course of a study on reasoning in an expert/novice paradigm, the details of which will be presented in section 4.3. 
 \section{Key Questions - Silvan/Julia}
 \textbf{this is the essence of the proposal. Hypotheses should be 
 derived from the key question; the relation between theory and research
@@ -48,7 +44,8 @@ hypotheses should be clearly specified; not more than 500 words\\
 a) Formulate the research questions based on previous research\\
 b) Translate the specific research questions into research hypotheses }\\
 
-Is experts' performance on logical reasoning task to be explained by \emph{procedural} knowledge - presumably consisting of an interaction of general intelligence and prior experience with similar problems - or by \emph{factual} knowledge - knowing rules of formal logic?
+How accurate is Stanovich's assesment according to which the accuracy of performance on a reasoning task is determined by one's mindware? What kind of knowledge structure would such a mindware have?\\
+\indent Is experts' performance on logical reasoning task to be explained by \emph{procedural} knowledge - presumably consisting of an interaction of general intelligence and prior experience with similar problems - or by \emph{factual} knowledge - knowing rules of formal logic?
 Related to this issue is the question to what extent the logical reasoning of an individual can improve through suitable training. If it were possible to determine the extent in which performance is aided by declarative knowledge, then the teaching of logical reasoning would certainly benefit. It is thus of interest to determine the influence of expertise in formal symbolic logic on human performance in logical reasoning tasks.
 
 As there is currently no literature on methods and techniques which professional logicians use to tackle logical problems, it is pertinent to inquire into the strategies which experts in the field of formal logic employ to tackle reasoning problems. There is a methodological difficulty, however: Classically, knowledge acquisition was viewed as the process of extracting, or mining, immediately from the knowledge source. Difficulties of knowledge elicitation and issues surrounding the end product of it have led to increased appreciation of the immense complexity of knowledge. Consequently, a more constructivist stance has taken hold, construing knowledge as constructed by an expert and reconstructed by the elicitor trying to pick her beautiful nose. "In short, knowledge acquisition is modeling or construction, not mining. Therefore, the result of knowledge acquisition is a model, and like all models it represents the object of the modeling enterprise to different degree of accuracy."\cite{cooke1994varieties}, p. 2
@@ -85,6 +82,6 @@ Second, educational strategies.
 
 Third, expert knowledge paradigm extension.
 
-\printbibliography
+%\printbibliography
 
 \end{document}
